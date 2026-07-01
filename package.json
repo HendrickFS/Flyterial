@@ -1,31 +1,16 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "flyterial-monorepo",
   "private": true,
+  "packageManager": "npm@10.8.2",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint"
   },
-  "dependencies": {
-    "@google/genai": "^2.10.0",
-    "@tiptap/react": "^3.27.1",
-    "@tiptap/starter-kit": "^3.27.1",
-    "@types/file-saver": "^2.0.7",
-    "file-saver": "^2.0.5",
-    "jszip": "^3.10.1",
-    "lucide-react": "^1.23.0",
-    "next": "16.2.9",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
+  "workspaces": [
+    "frontend"
+  ],
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.9",
-    "typescript": "^5"
+    "turbo": "^2.0.4"
   }
 }

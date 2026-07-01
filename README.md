@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flyterial Monorepo
+
+Welcome to the Flyterial monorepo! This repository is organized as a Turborepo-managed workspace.
+
+## Repository Structure
+
+The project has been split into workspaces:
+
+* **[frontend/](./frontend)**: The Next.js frontend web application, built with React, TypeScript, and standard Tailwind-free CSS. Contains the educational AI material generator, the markdown editor, Stripe checkouts simulation, and usage quotas logic.
+* **Root Configuration**: Manages workspaces, task pipelines, and global configurations.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+* [Node.js](https://nodejs.org/) (v18 or higher recommended)
+* `npm` (v9 or higher recommended)
+
+### Installation
+
+To install all workspace dependencies from the root, run:
+
+```bash
+npm install
+```
+
+---
+
+## Development
+
+Turborepo handles task orchestration and caching across the monorepo.
+
+### Run Development Servers
+
+To spin up all workspaces in development mode (which starts the frontend at `http://localhost:3000`):
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build for Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To compile all applications for production (and benefit from Turborepo's caching pipeline):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Code Quality (Linting)
 
-To learn more about Next.js, take a look at the following resources:
+To run the ESLint rules across the workspaces:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+```
