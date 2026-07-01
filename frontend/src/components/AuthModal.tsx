@@ -35,24 +35,28 @@ export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModal
 
     setLoading(true);
 
-    // Simulate standard network call delay
-    setTimeout(() => {
-      let success = false;
-      if (mode === 'login') {
-        success = login(email);
-      } else {
-        success = register(email);
-      }
+    (async () => {
+      try {
+        let success = false;
+        if (mode === 'login') {
+          success = await login(email, password);
+        } else {
+          success = await register(email, password);
+        }
 
-      setLoading(false);
+        setLoading(false);
 
-      if (success) {
-        onSuccess();
-        onClose();
-      } else {
-        setError('Authentication failed. Please check your credentials.');
+        if (success) {
+          onSuccess();
+          onClose();
+        } else {
+          setError('Authentication failed. Please check your credentials.');
+        }
+      } catch (err: any) {
+        setLoading(false);
+        setError(err?.message || 'Connection to authentication service failed.');
       }
-    }, 800);
+    })();
   };
 
   return (

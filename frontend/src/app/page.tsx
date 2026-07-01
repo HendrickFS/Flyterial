@@ -11,6 +11,7 @@ import Navbar from '@/components/Navbar';
 import LandingPage from '@/components/LandingPage';
 import AuthModal from '@/components/AuthModal';
 import CheckoutModal from '@/components/CheckoutModal';
+import SharePresetModal from '@/components/SharePresetModal';
 
 export default function Home() {
   const { 
@@ -20,7 +21,9 @@ export default function Home() {
     generationsLimit, 
     history, 
     addGeneration, 
-    deleteHistoryItem 
+    deleteHistoryItem,
+    presets,
+    sharePreset
   } = useSaaS();
 
   const [loading, setLoading] = useState(false);
@@ -31,6 +34,7 @@ export default function Home() {
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [authModalMode, setAuthModalMode] = useState<'login' | 'register'>('login');
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+  const [showSharePresetModal, setShowSharePresetModal] = useState(false);
 
   const [formData, setFormData] = useState({
     subject: '',
@@ -56,12 +60,18 @@ export default function Home() {
       return;
     }
     
+    // Resolve custom structure if community preset is selected
+    const customPreset = presets.find(p => p.id === formData.preset);
+
     setLoading(true);
     try {
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          customStructure: customPreset ? customPreset.structure : undefined
+        })
       });
       const data = await res.json();
       if (data.documents) {
@@ -319,7 +329,31 @@ export default function Home() {
                     </select>
                   </div>
                   <div className="w-full">
-                    <label htmlFor="preset">Structural Preset</label>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.375rem' }}>
+                      <label htmlFor="preset" style={{ margin: 0 }}>Structural Preset</label>
+                      <button 
+                        type="button"
+                        onClick={() => {
+                          if (!user) {
+                            setAuthModalMode('register');
+                            setShowAuthModal(true);
+                          } else {
+                            setShowSharePresetModal(true);
+                          }
+                        }}
+                        style={{
+                          background: 'transparent',
+                          border: 'none',
+                          color: 'var(--primary)',
+                          cursor: 'pointer',
+                          fontSize: '0.8rem',
+                          fontWeight: 500,
+                          padding: 0
+                        }}
+                      >
+                        + Share Preset
+                      </button>
+                    </div>
                     <select 
                       id="preset" 
                       value={formData.preset} 
@@ -332,6 +366,9 @@ export default function Home() {
                       <option value="study-guide">
                         {plan === 'pro' ? 'Comprehensive Study Guide' : 'Comprehensive Study Guide (PRO Only 🔒)'}
                       </option>
+                      {presets.map(p => (
+                        <option key={p.id} value={p.id}>{p.name} (Community)</option>
+                      ))}
                     </select>
                   </div>
                 </div>
@@ -421,6 +458,15 @@ export default function Home() {
       {showCheckoutModal && (
         <CheckoutModal 
           onClose={() => setShowCheckoutModal(false)}
+        />
+      )}
+
+      {showSharePresetModal && (
+        <SharePresetModal 
+          onClose={() => setShowSharePresetModal(false)}
+          onShare={async (name, level, structure, description) => {
+            return await sharePreset(name, level, structure, description);
+          }}
         />
       )}
     </div>

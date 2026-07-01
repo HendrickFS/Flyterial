@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id              String   @id @default(uuid())
+  email           String   @unique
+  passwordHash    String
+  plan            String   @default("free") // "free" or "pro"
+  generationsUsed Int      @default(0)
+  createdAt       DateTime @default(now())
+}
+
+model Preset {
+  id          String   @id @default(uuid())
+  name        String
+  level       String
+  structure   String   // Stores preset instructions or document array description
+  description String
+  createdBy   String   // Email of the user who created it
+  createdAt   DateTime @default(now())
+}

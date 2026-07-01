@@ -5,7 +5,7 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || 'dummy' });
 
 export async function POST(request: Request) {
   try {
-    const { subject, level, preset, context } = await request.json();
+    const { subject, level, preset, context, customStructure } = await request.json();
 
     if (!process.env.GEMINI_API_KEY) {
       // Return mock data for testing UI without an API key
@@ -20,7 +20,9 @@ export async function POST(request: Request) {
 
     // Define preset structures
     let structureStr = "";
-    if (preset === 'lesson-quiz') {
+    if (customStructure) {
+      structureStr = customStructure;
+    } else if (preset === 'lesson-quiz') {
       structureStr = "1 Lesson Plan and 1 Quiz";
     } else if (preset === 'full-module') {
       structureStr = "2 Lesson Plans, 2 Quizzes, and 1 Assignment";
