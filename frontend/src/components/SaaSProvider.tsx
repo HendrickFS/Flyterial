@@ -1,6 +1,9 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { en } from '../locales/en';
+import { pt } from '../locales/pt';
+import type { Dictionary } from '../locales/en';
 
 export interface Document {
   title: string;
@@ -47,6 +50,9 @@ interface SaaSContextType {
   sharePreset: (name: string, level: string, structure: string, description: string) => Promise<boolean>;
   deletePreset: (id: string) => Promise<boolean>;
   fetchPresets: () => Promise<void>;
+  locale: 'en' | 'pt';
+  setLocale: (locale: 'en' | 'pt') => void;
+  t: Dictionary;
 }
 
 const SaaSContext = createContext<SaaSContextType | undefined>(undefined);
@@ -61,40 +67,26 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
   const [presets, setPresets] = useState<CommunityPreset[]>([]);
   const [token, setToken] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [locale, setLocale] = useState<'en' | 'pt'>('en');
 
+  const handleSetLocale = (newLocale: 'en' | 'pt') => {
+    setLocale(newLocale);
+    localStorage.setItem('flyterial_locale', newLocale);
+  };
+
+  const t = locale === 'pt' ? pt : en;
   const generationsLimit = plan === 'pro' ? 99999 : 3;
 
-  // Initialize and load auth token + presets
-  useEffect(() => {
-    const storedToken = localStorage.getItem('flyterial_token');
-    if (storedToken) {
-      setToken(storedToken);
-      fetchProfile(storedToken);
-    }
-    fetchPresets();
-    setMounted(true);
+  const logout = useCallback(() => {
+    setUser(null);
+    setPlan('free');
+    setGenerationsUsed(0);
+    setHistory([]);
+    setToken(null);
+    localStorage.removeItem('flyterial_token');
   }, []);
 
-  // Sync history based on active user email
-  useEffect(() => {
-    if (!mounted || !user) return;
-    const userHistoryKey = `flyterial_history_${user.email}`;
-    const storedHistory = localStorage.getItem(userHistoryKey);
-    if (storedHistory) {
-      setHistory(JSON.parse(storedHistory));
-    } else {
-      setHistory([]);
-    }
-  }, [user, mounted]);
-
-  // Persist history changes to localStorage
-  useEffect(() => {
-    if (!mounted || !user) return;
-    const userHistoryKey = `flyterial_history_${user.email}`;
-    localStorage.setItem(userHistoryKey, JSON.stringify(history));
-  }, [history, user, mounted]);
-
-  const fetchProfile = async (authToken: string) => {
+  const fetchProfile = useCallback(async (authToken: string) => {
     try {
       const res = await fetch(`${API_URL}/users/profile`, {
         headers: {
@@ -106,6 +98,11 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
         setUser({ email: data.email });
         setPlan(data.plan);
         setGenerationsUsed(data.generationsUsed);
+        
+        // Sync history immediately upon profile fetch
+        const userHistoryKey = `flyterial_history_${data.email}`;
+        const storedHistory = localStorage.getItem(userHistoryKey);
+        setHistory(storedHistory ? JSON.parse(storedHistory) : []);
       } else {
         // Token expired or invalid
         logout();
@@ -113,9 +110,9 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
     } catch (err) {
       console.error('Failed to fetch profile:', err);
     }
-  };
+  }, [logout]);
 
-  const fetchPresets = async () => {
+  const fetchPresets = useCallback(async () => {
     try {
       const res = await fetch(`${API_URL}/presets`);
       if (res.ok) {
@@ -125,9 +122,42 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
     } catch (err) {
       console.error('Failed to fetch community presets:', err);
     }
-  };
+  }, []);
 
-  const login = async (email: string, password?: string): Promise<boolean> => {
+  // Initialize and load auth token + presets on mount
+  useEffect(() => {
+    Promise.resolve().then(() => {
+      // Load language preference from localStorage
+      const storedLocale = localStorage.getItem('flyterial_locale') as 'en' | 'pt';
+      if (storedLocale === 'en' || storedLocale === 'pt') {
+        setLocale(storedLocale);
+      }
+
+      // Load token preference from localStorage
+      const storedToken = localStorage.getItem('flyterial_token');
+      if (storedToken) {
+        setToken(storedToken);
+        fetchProfile(storedToken);
+      }
+      
+      // Load presets
+      fetchPresets();
+    });
+    
+    // Defer setting mounted state to a microtask to prevent synchronous cascading renders
+    Promise.resolve().then(() => {
+      setMounted(true);
+    });
+  }, [fetchProfile, fetchPresets]);
+
+  // Persist history changes to localStorage
+  useEffect(() => {
+    if (!mounted || !user) return;
+    const userHistoryKey = `flyterial_history_${user.email}`;
+    localStorage.setItem(userHistoryKey, JSON.stringify(history));
+  }, [history, user, mounted]);
+
+  async function login(email: string, password?: string): Promise<boolean> {
     try {
       const res = await fetch(`${API_URL}/users/login`, {
         method: 'POST',
@@ -141,6 +171,11 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
         setUser({ email: data.user.email });
         setPlan(data.user.plan);
         setGenerationsUsed(data.user.generationsUsed);
+        
+        // Sync history immediately on login
+        const userHistoryKey = `flyterial_history_${data.user.email}`;
+        const storedHistory = localStorage.getItem(userHistoryKey);
+        setHistory(storedHistory ? JSON.parse(storedHistory) : []);
         return true;
       }
       return false;
@@ -148,9 +183,9 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
       console.error('Login error:', err);
       return false;
     }
-  };
+  }
 
-  const register = async (email: string, password?: string): Promise<boolean> => {
+  async function register(email: string, password?: string): Promise<boolean> {
     try {
       const res = await fetch(`${API_URL}/users/register`, {
         method: 'POST',
@@ -172,18 +207,9 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
       console.error('Registration error:', err);
       return false;
     }
-  };
+  }
 
-  const logout = () => {
-    setUser(null);
-    setPlan('free');
-    setGenerationsUsed(0);
-    setHistory([]);
-    setToken(null);
-    localStorage.removeItem('flyterial_token');
-  };
-
-  const upgradePlan = async (): Promise<boolean> => {
+  async function upgradePlan(): Promise<boolean> {
     if (!token) return false;
     try {
       const res = await fetch(`${API_URL}/users/upgrade`, {
@@ -202,9 +228,9 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
       console.error('Upgrade plan error:', err);
       return false;
     }
-  };
+  }
 
-  const addGeneration = async (subject: string, level: string, preset: string, context: string, documents: Document[]) => {
+  async function addGeneration(subject: string, level: string, preset: string, context: string, documents: Document[]) {
     // Save locally
     const newItem: HistoryItem = {
       id: Date.now().toString(),
@@ -239,13 +265,13 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
         console.error('Increment usage error:', err);
       }
     }
-  };
+  }
 
   const deleteHistoryItem = (id: string) => {
     setHistory(prev => prev.filter(item => item.id !== id));
   };
 
-  const sharePreset = async (name: string, level: string, structure: string, description: string): Promise<boolean> => {
+  async function sharePreset(name: string, level: string, structure: string, description: string): Promise<boolean> {
     if (!token) return false;
     try {
       const res = await fetch(`${API_URL}/presets`, {
@@ -265,9 +291,9 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
       console.error('Share preset error:', err);
       return false;
     }
-  };
+  }
 
-  const deletePreset = async (id: string): Promise<boolean> => {
+  async function deletePreset(id: string): Promise<boolean> {
     if (!token) return false;
     try {
       const res = await fetch(`${API_URL}/presets/${id}`, {
@@ -285,7 +311,7 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
       console.error('Delete preset error:', err);
       return false;
     }
-  };
+  }
 
   return (
     <SaaSContext.Provider value={{
@@ -303,7 +329,10 @@ export function SaaSProvider({ children }: { children: React.ReactNode }) {
       deleteHistoryItem,
       sharePreset,
       deletePreset,
-      fetchPresets
+      fetchPresets,
+      locale,
+      setLocale: handleSetLocale,
+      t
     }}>
       {children}
     </SaaSContext.Provider>

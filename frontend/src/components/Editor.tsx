@@ -1,15 +1,19 @@
 'use client';
 
+import { useSaaS } from './SaaSProvider';
+
 interface EditorProps {
   content: string;
   onChange?: (content: string) => void;
 }
 
 export default function Editor({ content, onChange }: EditorProps) {
+  const { t } = useSaaS();
+
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <div style={{ padding: '1rem', borderBottom: '1px solid var(--border)', background: 'var(--surface-hover)', fontWeight: 500, borderTopLeftRadius: 'var(--radius)', borderTopRightRadius: 'var(--radius)' }}>
-        Markdown Editor
+        {t.editor.title}
       </div>
       <textarea 
         value={content}

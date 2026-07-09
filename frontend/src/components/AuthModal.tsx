@@ -11,7 +11,7 @@ interface AuthModalProps {
 }
 
 export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModalProps) {
-  const { login, register } = useSaaS();
+  const { login, register, t } = useSaaS();
   const [mode, setMode] = useState<'login' | 'register'>(initialMode);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,12 +24,12 @@ export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModal
     setError('');
     
     if (!email || !password) {
-      setError('Please fill in all fields.');
+      setError(t.auth.fillFieldsError);
       return;
     }
 
     if (mode === 'register' && password !== confirmPassword) {
-      setError('Passwords do not match.');
+      setError(t.auth.passwordMismatch);
       return;
     }
 
@@ -50,11 +50,11 @@ export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModal
           onSuccess();
           onClose();
         } else {
-          setError('Authentication failed. Please check your credentials.');
+          setError(t.auth.authFailed);
         }
-      } catch (err: any) {
+      } catch (err) {
         setLoading(false);
-        setError(err?.message || 'Connection to authentication service failed.');
+        setError(err instanceof Error ? err.message : t.auth.connectionFailed);
       }
     })();
   };
@@ -105,10 +105,10 @@ export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModal
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>
-            {mode === 'login' ? 'Welcome Back' : 'Create Account'}
+            {mode === 'login' ? t.auth.welcomeBack : t.auth.createAccount}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-            {mode === 'login' ? 'Access your educational generator dashboard' : 'Sign up to generate assessment materials'}
+            {mode === 'login' ? t.auth.welcomeSub : t.auth.createSub}
           </p>
         </div>
 
@@ -130,7 +130,7 @@ export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModal
         {/* Form */}
         <form onSubmit={handleSubmit} className="flex-col gap-4">
           <div>
-            <label htmlFor="auth-email">Email Address</label>
+            <label htmlFor="auth-email">{t.auth.emailLabel}</label>
             <div style={{ position: 'relative' }}>
               <input 
                 type="email" 
@@ -152,7 +152,7 @@ export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModal
           </div>
 
           <div>
-            <label htmlFor="auth-password">Password</label>
+            <label htmlFor="auth-password">{t.auth.passwordLabel}</label>
             <div style={{ position: 'relative' }}>
               <input 
                 type="password" 
@@ -175,7 +175,7 @@ export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModal
 
           {mode === 'register' && (
             <div>
-              <label htmlFor="auth-confirm">Confirm Password</label>
+              <label htmlFor="auth-confirm">{t.auth.confirmPasswordLabel}</label>
               <div style={{ position: 'relative' }}>
                 <input 
                   type="password" 
@@ -208,14 +208,14 @@ export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModal
             }} 
             disabled={loading}
           >
-            {loading ? 'Processing...' : mode === 'login' ? 'Log In' : 'Sign Up'}
+            {loading ? t.common.processing : mode === 'login' ? t.auth.loginBtn : t.auth.signupBtn}
           </button>
         </form>
 
         {/* Mode Toggle */}
         <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.875rem' }}>
           <span style={{ color: 'var(--text-muted)' }}>
-            {mode === 'login' ? "Don't have an account? " : "Already have an account? "}
+            {mode === 'login' ? t.auth.dontHaveAccount : t.auth.alreadyAccount}
           </span>
           <button 
             onClick={() => {
@@ -232,7 +232,7 @@ export default function AuthModal({ initialMode, onClose, onSuccess }: AuthModal
               padding: 0
             }}
           >
-            {mode === 'login' ? 'Sign up' : 'Log in'}
+            {mode === 'login' ? t.auth.signupLink : t.auth.loginLink}
           </button>
         </div>
       </div>

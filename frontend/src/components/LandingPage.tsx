@@ -1,6 +1,7 @@
 'use client';
 
 import { Sparkles, FileText, Download, Clock, ShieldCheck, Zap } from 'lucide-react';
+import { useSaaS } from './SaaSProvider';
 
 interface LandingPageProps {
   onOpenAuth: (mode: 'login' | 'register') => void;
@@ -10,6 +11,8 @@ interface LandingPageProps {
 }
 
 export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard }: LandingPageProps) {
+  const { t } = useSaaS();
+
   const handleCta = () => {
     if (userLoggedIn) {
       onGoToDashboard();
@@ -65,7 +68,7 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
             animation: 'pulse 3s infinite'
           }}>
             <Sparkles size={14} />
-            AI-Powered Instructional Design
+            {t.landing.badge}
           </div>
 
           <h1 style={{
@@ -78,7 +81,7 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            Craft Educational Materials in Seconds
+            {t.landing.title}
           </h1>
 
           <p style={{
@@ -90,7 +93,7 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
             marginLeft: 'auto',
             marginRight: 'auto'
           }}>
-            Leverage advanced Gemini AI to instantly generate high-fidelity, structured lesson plans, quizzes, assignments, and study guides for any level.
+            {t.landing.subtitle}
           </p>
 
           <div className="flex justify-center gap-4" style={{ flexWrap: 'wrap' }}>
@@ -104,7 +107,7 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
                 boxShadow: '0 4px 20px rgba(99, 102, 241, 0.4)'
               }}
             >
-              {userLoggedIn ? 'Go to Dashboard' : 'Start Generating Free'}
+              {userLoggedIn ? t.landing.ctaDashboard : t.landing.ctaStart}
             </button>
             <a 
               href="#pricing"
@@ -117,7 +120,7 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
                 color: 'var(--foreground)'
               }}
             >
-              View Pricing
+              {t.landing.ctaPricing}
             </a>
           </div>
         </div>
@@ -126,8 +129,8 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
       {/* Features Grid Section */}
       <section className="container" style={{ marginBottom: '6rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ fontSize: '2.25rem', marginBottom: '0.75rem' }}>Features Built for Educators</h2>
-          <p style={{ color: 'var(--text-muted)' }}>Everything you need to streamline course and lesson preparation.</p>
+          <h2 style={{ fontSize: '2.25rem', marginBottom: '0.75rem' }}>{t.landing.featuresTitle}</h2>
+          <p style={{ color: 'var(--text-muted)' }}>{t.landing.featuresSubtitle}</p>
         </div>
 
         <div style={{
@@ -150,9 +153,9 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
             }}>
               <Zap size={24} />
             </div>
-            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Instant AI Generation</h3>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{t.landing.feature1Title}</h3>
             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-              Input any topic or subject, choose your target educational level, and get curriculum-aligned resources generated instantly.
+              {t.landing.feature1Desc}
             </p>
           </div>
 
@@ -171,9 +174,9 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
             }}>
               <FileText size={24} />
             </div>
-            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Markdown Editor</h3>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{t.landing.feature2Title}</h3>
             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-              Refine the generated material on the fly. Change wording, add notes, and format easily using the built-in side-by-side text editor.
+              {t.landing.feature2Desc}
             </p>
           </div>
 
@@ -192,9 +195,9 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
             }}>
               <Download size={24} />
             </div>
-            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Bulk Export (.zip)</h3>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{t.landing.feature3Title}</h3>
             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-              Export all files as a single organized bundle. Get markdown files compressed into a ZIP folder ready for your LMS or drive.
+              {t.landing.feature3Desc}
             </p>
           </div>
 
@@ -213,9 +216,9 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
             }}>
               <Clock size={24} />
             </div>
-            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Generation History</h3>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{t.landing.feature4Title}</h3>
             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-              Save all generated files directly into your history drawer. Re-open, re-edit, or download past lessons at any time.
+              {t.landing.feature4Desc}
             </p>
           </div>
         </div>
@@ -224,8 +227,8 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
       {/* Pricing Section */}
       <section id="pricing" className="container" style={{ maxWidth: '900px' }}>
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ fontSize: '2.25rem', marginBottom: '0.75rem' }}>Flexible Pricing Plans</h2>
-          <p style={{ color: 'var(--text-muted)' }}>Start creating for free, or unlock unlimited potential with Pro.</p>
+          <h2 style={{ fontSize: '2.25rem', marginBottom: '0.75rem' }}>{t.landing.pricingTitle}</h2>
+          <p style={{ color: 'var(--text-muted)' }}>{t.landing.pricingSubtitle}</p>
         </div>
 
         <div style={{
@@ -244,26 +247,26 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
             position: 'relative'
           }}>
             <div>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Free Plan</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>Perfect for trying out Flyterial</p>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{t.landing.freePlanName}</h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>{t.landing.freePlanDesc}</p>
               
               <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '2rem' }}>
-                <span style={{ fontSize: '2.5rem', fontWeight: 800 }}>$0</span>
-                <span style={{ color: 'var(--text-muted)', marginLeft: '0.25rem' }}>/ forever</span>
+                <span style={{ fontSize: '2.5rem', fontWeight: 800 }}>{t.landing.freePlanPrice}</span>
+                <span style={{ color: 'var(--text-muted)', marginLeft: '0.25rem' }}>{t.landing.freePlanDuration}</span>
               </div>
 
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <ShieldCheck size={18} color="#10b981" /> 3 AI Generations Total
+                  <ShieldCheck size={18} color="#10b981" /> {t.landing.freePlanFeature1}
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <ShieldCheck size={18} color="#10b981" /> Basic Presets (Lesson + Quiz)
+                  <ShieldCheck size={18} color="#10b981" /> {t.landing.freePlanFeature2}
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <ShieldCheck size={18} color="#10b981" /> Side-by-Side Markdown Editor
+                  <ShieldCheck size={18} color="#10b981" /> {t.landing.freePlanFeature3}
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <ShieldCheck size={18} color="#10b981" /> Local History Sync
+                  <ShieldCheck size={18} color="#10b981" /> {t.landing.freePlanFeature4}
                 </li>
               </ul>
             </div>
@@ -280,7 +283,7 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
                 marginTop: 'auto'
               }}
             >
-              {userLoggedIn ? 'Go to Dashboard' : 'Get Started'}
+              {userLoggedIn ? t.landing.ctaDashboard : t.landing.freePlanCta}
             </button>
           </div>
 
@@ -309,35 +312,35 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
               textTransform: 'uppercase',
               letterSpacing: '0.05em'
             }}>
-              Popular
+              {t.landing.popular}
             </div>
 
             <div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                Pro Plan <Sparkles size={18} color="#c084fc" />
+                {t.landing.proPlanName} <Sparkles size={18} color="#c084fc" />
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>For educators who need unlimited creation power</p>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>{t.landing.proPlanDesc}</p>
               
               <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '2rem' }}>
-                <span style={{ fontSize: '2.5rem', fontWeight: 800 }}>$15</span>
-                <span style={{ color: 'var(--text-muted)', marginLeft: '0.25rem' }}>/ month</span>
+                <span style={{ fontSize: '2.5rem', fontWeight: 800 }}>{t.landing.proPlanPrice}</span>
+                <span style={{ color: 'var(--text-muted)', marginLeft: '0.25rem' }}>{t.landing.proPlanDuration}</span>
               </div>
 
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', fontWeight: 500 }}>
-                  <ShieldCheck size={18} color="#10b981" /> **Unlimited** Generations
+                  <ShieldCheck size={18} color="#10b981" /> {t.landing.proPlanFeature1}
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <ShieldCheck size={18} color="#10b981" /> All Presets (Modules, Guides, etc.)
+                  <ShieldCheck size={18} color="#10b981" /> {t.landing.proPlanFeature2}
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <ShieldCheck size={18} color="#10b981" /> Faster AI generation speeds
+                  <ShieldCheck size={18} color="#10b981" /> {t.landing.proPlanFeature3}
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <ShieldCheck size={18} color="#10b981" /> Full History drawer management
+                  <ShieldCheck size={18} color="#10b981" /> {t.landing.proPlanFeature4}
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <ShieldCheck size={18} color="#10b981" /> Priority email support
+                  <ShieldCheck size={18} color="#10b981" /> {t.landing.proPlanFeature5}
                 </li>
               </ul>
             </div>
@@ -353,7 +356,7 @@ export default function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, 
                 boxShadow: '0 4px 15px rgba(168, 85, 247, 0.3)'
               }}
             >
-              Upgrade to Pro
+              {t.landing.proPlanCta}
             </button>
           </div>
         </div>

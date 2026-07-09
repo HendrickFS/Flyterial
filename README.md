@@ -1,57 +1,46 @@
-# Flyterial Monorepo
+# Flyterial - AI Educational Resource Generator
 
-Welcome to the Flyterial monorepo! This repository is organized as a Turborepo-managed workspace.
+Flyterial is a stateless, SaaS-style web application designed to instantly generate comprehensive educational resources (lesson plans, quizzes, study guides) using AI.
 
-## Repository Structure
+## Documentation Overview
 
-The project has been split into workspaces:
+Detailed documentation for the project is separated into the following sections:
 
-* **[frontend/](./frontend)**: The Next.js frontend web application, built with React, TypeScript, and standard Tailwind-free CSS. Contains the educational AI material generator, the markdown editor, Stripe checkouts simulation, and usage quotas logic.
-* **Root Configuration**: Manages workspaces, task pipelines, and global configurations.
-
----
+- 📖 [Application Purpose & Details](./docs/purpose.md)
+- ⚖️ [Business Rules & Constraints](./docs/business-rules.md)
+- ⚙️ [Backend Architecture](./docs/backend.md)
+- 🎨 [Frontend Architecture](./docs/frontend.md)
 
 ## Getting Started
 
 ### Prerequisites
-
-* [Node.js](https://nodejs.org/) (v18 or higher recommended)
-* `npm` (v9 or higher recommended)
+- Node.js (v18+)
+- npm or yarn
 
 ### Installation
+1. Clone the repository and navigate into it.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-To install all workspace dependencies from the root, run:
-
-```bash
-npm install
+### Environment Setup
+If you want to use the live Google Gemini AI, create a `.env.local` file in the root of the project:
+```env
+GEMINI_API_KEY=your_google_gemini_api_key_here
 ```
+*Note: If no API key is provided, the application will gracefully fall back to a mock generation mode, allowing you to test the UI and export flows without an active subscription.*
 
----
-
-## Development
-
-Turborepo handles task orchestration and caching across the monorepo.
-
-### Run Development Servers
-
-To spin up all workspaces in development mode (which starts the frontend at `http://localhost:3000`):
-
+### Running the Application
+Start the development server:
 ```bash
 npm run dev
 ```
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-### Build for Production
-
-To compile all applications for production (and benefit from Turborepo's caching pipeline):
-
-```bash
-npm run build
-```
-
-### Code Quality (Linting)
-
-To run the ESLint rules across the workspaces:
-
-```bash
-npm run lint
-```
+## Technologies Used
+- **Next.js** (App Router)
+- **React**
+- **Vanilla CSS** (Custom Premium Design System)
+- **Google Gemini API** (`@google/genai`)
+- **JSZip & FileSaver** (For bulk exporting)

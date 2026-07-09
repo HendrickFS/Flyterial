@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { X, Share2, FileSpreadsheet } from 'lucide-react';
+import { X, Share2 } from 'lucide-react';
+import { useSaaS } from './SaaSProvider';
 
 interface SharePresetModalProps {
   onClose: () => void;
@@ -9,6 +10,7 @@ interface SharePresetModalProps {
 }
 
 export default function SharePresetModal({ onClose, onShare }: SharePresetModalProps) {
+  const { t } = useSaaS();
   const [name, setName] = useState('');
   const [level, setLevel] = useState('highschool');
   const [structure, setStructure] = useState('');
@@ -21,7 +23,7 @@ export default function SharePresetModal({ onClose, onShare }: SharePresetModalP
     setError('');
 
     if (!name || !structure || !description) {
-      setError('Please fill in all fields.');
+      setError(t.sharePreset.fillFieldsError);
       return;
     }
 
@@ -30,7 +32,7 @@ export default function SharePresetModal({ onClose, onShare }: SharePresetModalP
     setLoading(false);
 
     if (!success) {
-      setError('Failed to share preset. Please try again.');
+      setError(t.sharePreset.shareFailed);
     }
   };
 
@@ -79,10 +81,10 @@ export default function SharePresetModal({ onClose, onShare }: SharePresetModalP
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-            <Share2 size={24} color="var(--primary)" /> Share Custom Preset
+            <Share2 size={24} color="var(--primary)" /> {t.sharePreset.title}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-            Design a custom structure preset and share it with the Flyterial community
+            {t.sharePreset.subtitle}
           </p>
         </div>
 
@@ -104,51 +106,51 @@ export default function SharePresetModal({ onClose, onShare }: SharePresetModalP
         {/* Form */}
         <form onSubmit={handleSubmit} className="flex-col gap-4">
           <div>
-            <label htmlFor="preset-name">Preset Name</label>
+            <label htmlFor="preset-name">{t.sharePreset.nameLabel}</label>
             <input 
               type="text" 
               id="preset-name" 
               required
               value={name}
               onChange={e => setName(e.target.value)}
-              placeholder="e.g. Biology Lab & Quiz, Essay Outline..." 
+              placeholder={t.sharePreset.namePlaceholder} 
               disabled={loading}
             />
           </div>
 
           <div className="flex gap-4">
             <div className="w-full">
-              <label htmlFor="preset-level">Target Level</label>
+              <label htmlFor="preset-level">{t.sharePreset.levelLabel}</label>
               <select id="preset-level" value={level} onChange={e => setLevel(e.target.value)} disabled={loading}>
-                <option value="elementary">Elementary School</option>
-                <option value="highschool">High School</option>
-                <option value="undergrad">Undergraduate</option>
+                <option value="elementary">{t.common.elementary}</option>
+                <option value="highschool">{t.common.highschool}</option>
+                <option value="undergrad">{t.common.undergrad}</option>
               </select>
             </div>
           </div>
 
           <div>
-            <label htmlFor="preset-structure">Structure Details</label>
+            <label htmlFor="preset-structure">{t.sharePreset.structureLabel}</label>
             <textarea 
               id="preset-structure" 
               required
               rows={2}
               value={structure}
               onChange={e => setStructure(e.target.value)}
-              placeholder="e.g. 1 Lesson Outline, 1 Classroom Activity sheet, and 1 Grading Rubric" 
+              placeholder={t.sharePreset.structurePlaceholder} 
               disabled={loading}
             />
           </div>
 
           <div>
-            <label htmlFor="preset-desc">Description</label>
+            <label htmlFor="preset-desc">{t.sharePreset.descriptionLabel}</label>
             <textarea 
               id="preset-desc" 
               required
               rows={3}
               value={description}
               onChange={e => setDescription(e.target.value)}
-              placeholder="Describe what resources this preset will generate..." 
+              placeholder={t.sharePreset.descriptionPlaceholder} 
               disabled={loading}
             />
           </div>
@@ -164,7 +166,7 @@ export default function SharePresetModal({ onClose, onShare }: SharePresetModalP
             }} 
             disabled={loading}
           >
-            {loading ? 'Sharing...' : 'Share with Community ✨'}
+            {loading ? t.sharePreset.sharing : t.sharePreset.shareBtn}
           </button>
         </form>
       </div>

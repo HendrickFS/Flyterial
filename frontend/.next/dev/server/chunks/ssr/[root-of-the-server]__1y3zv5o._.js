@@ -7,9 +7,12 @@ __turbopack_context__.s([
     ()=>Editor
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/src/components/SaaSProvider.tsx [app-ssr] (ecmascript)");
 'use client';
 ;
+;
 function Editor({ content, onChange }) {
+    const { t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: {
             height: '100%',
@@ -26,10 +29,10 @@ function Editor({ content, onChange }) {
                     borderTopLeftRadius: 'var(--radius)',
                     borderTopRightRadius: 'var(--radius)'
                 },
-                children: "Markdown Editor"
+                children: t.editor.title
             }, void 0, false, {
                 fileName: "[project]/frontend/src/components/Editor.tsx",
-                lineNumber: 11,
+                lineNumber: 15,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -52,13 +55,13 @@ function Editor({ content, onChange }) {
                 spellCheck: "false"
             }, void 0, false, {
                 fileName: "[project]/frontend/src/components/Editor.tsx",
-                lineNumber: 14,
+                lineNumber: 18,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/src/components/Editor.tsx",
-        lineNumber: 10,
+        lineNumber: 14,
         columnNumber: 5
     }, this);
 }
@@ -101,14 +104,17 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/log-out.mjs [app-ssr] (ecmascript) <export default as LogOut>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/credit-card.mjs [app-ssr] (ecmascript) <export default as CreditCard>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.mjs [app-ssr] (ecmascript) <export default as Sparkles>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Globe$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/globe.mjs [app-ssr] (ecmascript) <export default as Globe>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.mjs [app-ssr] (ecmascript) <export default as ChevronDown>");
 'use client';
 ;
 ;
 ;
 ;
 function Navbar({ onOpenAuth, onOpenCheckout }) {
-    const { user, plan, generationsUsed, generationsLimit, logout } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
+    const { user, plan, generationsUsed, generationsLimit, logout, locale, setLocale, t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
     const [dropdownOpen, setDropdownOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [langDropdownOpen, setLangDropdownOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
         style: {
             position: 'sticky',
@@ -153,7 +159,7 @@ function Navbar({ onOpenAuth, onOpenCheckout }) {
                             children: "F"
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/Navbar.tsx",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -168,358 +174,518 @@ function Navbar({ onOpenAuth, onOpenCheckout }) {
                             children: "Flyterial"
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/Navbar.tsx",
-                            lineNumber: 47,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/src/components/Navbar.tsx",
-                    lineNumber: 31,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                     className: "flex items-center gap-6",
-                    children: user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-4",
-                        children: [
-                            plan === 'free' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-2",
-                                style: {
-                                    fontSize: '0.85rem',
-                                    padding: '0.35rem 0.75rem',
-                                    background: 'rgba(255, 255, 255, 0.03)',
-                                    borderRadius: '99px',
-                                    border: '1px solid var(--border)'
-                                },
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        style: {
-                                            color: 'var(--text-muted)'
-                                        },
-                                        children: "Usage:"
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                        lineNumber: 74,
-                                        columnNumber: 19
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        style: {
-                                            fontWeight: 600,
-                                            color: 'var(--foreground)'
-                                        },
-                                        children: [
-                                            generationsUsed,
-                                            " / ",
-                                            generationsLimit
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                        lineNumber: 75,
-                                        columnNumber: 19
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                lineNumber: 64,
-                                columnNumber: 17
-                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-1.5",
-                                style: {
-                                    fontSize: '0.85rem',
-                                    padding: '0.35rem 0.75rem',
-                                    background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(99, 102, 241, 0.15))',
-                                    borderRadius: '99px',
-                                    border: '1px solid rgba(168, 85, 247, 0.3)',
-                                    color: '#c084fc',
-                                    fontWeight: 600
-                                },
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
-                                        size: 13
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                        lineNumber: 92,
-                                        columnNumber: 19
-                                    }, this),
-                                    "PRO Plan"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                lineNumber: 80,
-                                columnNumber: 17
-                            }, this),
-                            plan === 'free' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: onOpenCheckout,
-                                className: "btn btn-primary",
-                                style: {
-                                    padding: '0.4rem 1rem',
-                                    fontSize: '0.85rem',
-                                    borderRadius: 'var(--radius)',
-                                    background: 'linear-gradient(to right, var(--primary), #a855f7)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.25rem'
-                                },
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
-                                        size: 14
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                        lineNumber: 112,
-                                        columnNumber: 19
-                                    }, this),
-                                    "Upgrade"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                lineNumber: 99,
-                                columnNumber: 17
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                style: {
-                                    position: 'relative'
-                                },
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>setDropdownOpen(!dropdownOpen),
-                                        style: {
-                                            background: 'rgba(255, 255, 255, 0.05)',
-                                            border: '1px solid var(--border)',
-                                            borderRadius: '50%',
-                                            width: '36px',
-                                            height: '36px',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            cursor: 'pointer',
-                                            color: 'var(--foreground)',
-                                            transition: 'all 0.2s'
-                                        },
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
-                                            size: 18
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            style: {
+                                position: 'relative'
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>setLangDropdownOpen(!langDropdownOpen),
+                                    style: {
+                                        background: 'rgba(255, 255, 255, 0.03)',
+                                        border: '1px solid var(--border)',
+                                        borderRadius: '8px',
+                                        padding: '0.4rem 0.75rem',
+                                        fontSize: '0.85rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        cursor: 'pointer',
+                                        color: 'var(--foreground)',
+                                        transition: 'all 0.2s'
+                                    },
+                                    onMouseEnter: (e)=>e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)',
+                                    onMouseLeave: (e)=>e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)',
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Globe$3e$__["Globe"], {
+                                            size: 14,
+                                            color: "var(--primary)"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 81,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: locale === 'en' ? '🇺🇸 EN' : '🇧🇷 PT'
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                            lineNumber: 82,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
+                                            size: 12,
+                                            style: {
+                                                transform: langDropdownOpen ? 'rotate(180deg)' : 'none',
+                                                transition: 'transform 0.2s',
+                                                color: 'var(--text-muted)'
+                                            }
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                            lineNumber: 83,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                    lineNumber: 63,
+                                    columnNumber: 13
+                                }, this),
+                                langDropdownOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            onClick: ()=>setLangDropdownOpen(false),
+                                            style: {
+                                                position: 'fixed',
+                                                inset: 0,
+                                                zIndex: 40
+                                            }
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                            lineNumber: 92,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            style: {
+                                                position: 'absolute',
+                                                right: 0,
+                                                marginTop: '0.5rem',
+                                                width: '120px',
+                                                background: '#0b0f19',
+                                                border: '1px solid var(--border)',
+                                                borderRadius: 'var(--radius)',
+                                                boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.5)',
+                                                padding: '0.25rem',
+                                                zIndex: 50,
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                gap: '0.15rem'
+                                            },
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>{
+                                                        setLocale('en');
+                                                        setLangDropdownOpen(false);
+                                                    },
+                                                    style: {
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '0.5rem',
+                                                        width: '100%',
+                                                        padding: '0.5rem 0.75rem',
+                                                        border: 'none',
+                                                        background: locale === 'en' ? 'rgba(99, 102, 241, 0.1)' : 'transparent',
+                                                        borderRadius: '6px',
+                                                        color: 'var(--foreground)',
+                                                        textAlign: 'left',
+                                                        cursor: 'pointer',
+                                                        fontSize: '0.85rem',
+                                                        fontWeight: locale === 'en' ? 600 : 400
+                                                    },
+                                                    className: "dropdown-item-hover",
+                                                    children: "🇺🇸 English"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                    lineNumber: 111,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>{
+                                                        setLocale('pt');
+                                                        setLangDropdownOpen(false);
+                                                    },
+                                                    style: {
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '0.5rem',
+                                                        width: '100%',
+                                                        padding: '0.5rem 0.75rem',
+                                                        border: 'none',
+                                                        background: locale === 'pt' ? 'rgba(99, 102, 241, 0.1)' : 'transparent',
+                                                        borderRadius: '6px',
+                                                        color: 'var(--foreground)',
+                                                        textAlign: 'left',
+                                                        cursor: 'pointer',
+                                                        fontSize: '0.85rem',
+                                                        fontWeight: locale === 'pt' ? 600 : 400
+                                                    },
+                                                    className: "dropdown-item-hover",
+                                                    children: "🇧🇷 Português"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                    lineNumber: 135,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                            lineNumber: 96,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                            lineNumber: 62,
+                            columnNumber: 11
+                        }, this),
+                        user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-4",
+                            children: [
+                                plan === 'free' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-2",
+                                    style: {
+                                        fontSize: '0.85rem',
+                                        padding: '0.35rem 0.75rem',
+                                        background: 'rgba(255, 255, 255, 0.03)',
+                                        borderRadius: '99px',
+                                        border: '1px solid var(--border)'
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            style: {
+                                                color: 'var(--text-muted)'
+                                            },
+                                            children: [
+                                                t.navbar.usage,
+                                                ":"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                            lineNumber: 178,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            style: {
+                                                fontWeight: 600,
+                                                color: 'var(--foreground)'
+                                            },
+                                            children: [
+                                                generationsUsed,
+                                                " / ",
+                                                generationsLimit
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                            lineNumber: 179,
                                             columnNumber: 19
                                         }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                        lineNumber: 119,
-                                        columnNumber: 17
-                                    }, this),
-                                    dropdownOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                onClick: ()=>setDropdownOpen(false),
-                                                style: {
-                                                    position: 'fixed',
-                                                    inset: 0,
-                                                    zIndex: 40
-                                                }
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                    lineNumber: 168,
+                                    columnNumber: 17
+                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-1.5",
+                                    style: {
+                                        fontSize: '0.85rem',
+                                        padding: '0.35rem 0.75rem',
+                                        background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(99, 102, 241, 0.15))',
+                                        borderRadius: '99px',
+                                        border: '1px solid rgba(168, 85, 247, 0.3)',
+                                        color: '#c084fc',
+                                        fontWeight: 600
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
+                                            size: 13
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                            lineNumber: 196,
+                                            columnNumber: 19
+                                        }, this),
+                                        t.navbar.proPlan
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                    lineNumber: 184,
+                                    columnNumber: 17
+                                }, this),
+                                plan === 'free' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: onOpenCheckout,
+                                    className: "btn btn-primary",
+                                    style: {
+                                        padding: '0.4rem 1rem',
+                                        fontSize: '0.85rem',
+                                        borderRadius: 'var(--radius)',
+                                        background: 'linear-gradient(to right, var(--primary), #a855f7)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.25rem'
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
+                                            size: 14
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                            lineNumber: 216,
+                                            columnNumber: 19
+                                        }, this),
+                                        t.navbar.upgrade
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                    lineNumber: 203,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    style: {
+                                        position: 'relative'
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>setDropdownOpen(!dropdownOpen),
+                                            style: {
+                                                background: 'rgba(255, 255, 255, 0.05)',
+                                                border: '1px solid var(--border)',
+                                                borderRadius: '50%',
+                                                width: '36px',
+                                                height: '36px',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                cursor: 'pointer',
+                                                color: 'var(--foreground)',
+                                                transition: 'all 0.2s'
+                                            },
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
+                                                size: 18
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                                lineNumber: 141,
-                                                columnNumber: 21
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                style: {
-                                                    position: 'absolute',
-                                                    right: 0,
-                                                    marginTop: '0.5rem',
-                                                    width: '240px',
-                                                    background: '#0b0f19',
-                                                    border: '1px solid var(--border)',
-                                                    borderRadius: 'var(--radius)',
-                                                    boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.5)',
-                                                    padding: '0.5rem',
-                                                    zIndex: 50,
-                                                    display: 'flex',
-                                                    flexDirection: 'column',
-                                                    gap: '0.25rem'
-                                                },
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        style: {
-                                                            padding: '0.5rem 0.75rem',
-                                                            borderBottom: '1px solid var(--border)',
-                                                            marginBottom: '0.25rem'
-                                                        },
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                style: {
-                                                                    fontSize: '0.8rem',
-                                                                    color: 'var(--text-muted)'
-                                                                },
-                                                                children: "Signed in as"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                                                lineNumber: 161,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                style: {
-                                                                    fontSize: '0.9rem',
-                                                                    fontWeight: 500,
-                                                                    color: 'var(--foreground)',
-                                                                    textOverflow: 'ellipsis',
-                                                                    overflow: 'hidden',
-                                                                    whiteSpace: 'nowrap'
-                                                                },
-                                                                children: user.email
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                                                lineNumber: 162,
-                                                                columnNumber: 25
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                                        lineNumber: 160,
-                                                        columnNumber: 23
-                                                    }, this),
-                                                    plan === 'free' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        onClick: ()=>{
-                                                            setDropdownOpen(false);
-                                                            onOpenCheckout();
-                                                        },
-                                                        style: {
-                                                            display: 'flex',
-                                                            alignItems: 'center',
-                                                            gap: '0.5rem',
-                                                            width: '100%',
-                                                            padding: '0.6rem 0.75rem',
-                                                            border: 'none',
-                                                            background: 'transparent',
-                                                            borderRadius: '8px',
-                                                            color: 'var(--foreground)',
-                                                            textAlign: 'left',
-                                                            cursor: 'pointer',
-                                                            fontSize: '0.875rem'
-                                                        },
-                                                        className: "dropdown-item-hover",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__["CreditCard"], {
-                                                                size: 16,
-                                                                color: "var(--primary)"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                                                lineNumber: 189,
-                                                                columnNumber: 27
-                                                            }, this),
-                                                            "Billing / Upgrade"
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                                        lineNumber: 168,
-                                                        columnNumber: 25
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        onClick: ()=>{
-                                                            setDropdownOpen(false);
-                                                            logout();
-                                                        },
-                                                        style: {
-                                                            display: 'flex',
-                                                            alignItems: 'center',
-                                                            gap: '0.5rem',
-                                                            width: '100%',
-                                                            padding: '0.6rem 0.75rem',
-                                                            border: 'none',
-                                                            background: 'transparent',
-                                                            borderRadius: '8px',
-                                                            color: '#ef4444',
-                                                            textAlign: 'left',
-                                                            cursor: 'pointer',
-                                                            fontSize: '0.875rem'
-                                                        },
-                                                        className: "dropdown-item-hover",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__["LogOut"], {
-                                                                size: 16
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                                                lineNumber: 215,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            "Log out"
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                                        lineNumber: 194,
-                                                        columnNumber: 23
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                                lineNumber: 145,
-                                                columnNumber: 21
+                                                lineNumber: 239,
+                                                columnNumber: 19
                                             }, this)
-                                        ]
-                                    }, void 0, true)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                lineNumber: 118,
-                                columnNumber: 15
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                        lineNumber: 61,
-                        columnNumber: 13
-                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-4",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>onOpenAuth('login'),
-                                style: {
-                                    background: 'transparent',
-                                    border: 'none',
-                                    color: 'var(--foreground)',
-                                    cursor: 'pointer',
-                                    fontSize: '0.95rem',
-                                    fontWeight: 500
-                                },
-                                children: "Log in"
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                lineNumber: 225,
-                                columnNumber: 15
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>onOpenAuth('register'),
-                                className: "btn btn-primary",
-                                style: {
-                                    padding: '0.5rem 1.25rem',
-                                    fontSize: '0.9rem',
-                                    background: 'linear-gradient(to right, var(--primary), #a855f7)'
-                                },
-                                children: "Get Started"
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/src/components/Navbar.tsx",
-                                lineNumber: 238,
-                                columnNumber: 15
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/frontend/src/components/Navbar.tsx",
-                        lineNumber: 224,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                            lineNumber: 223,
+                                            columnNumber: 17
+                                        }, this),
+                                        dropdownOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    onClick: ()=>setDropdownOpen(false),
+                                                    style: {
+                                                        position: 'fixed',
+                                                        inset: 0,
+                                                        zIndex: 40
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                    lineNumber: 245,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    style: {
+                                                        position: 'absolute',
+                                                        right: 0,
+                                                        marginTop: '0.5rem',
+                                                        width: '240px',
+                                                        background: '#0b0f19',
+                                                        border: '1px solid var(--border)',
+                                                        borderRadius: 'var(--radius)',
+                                                        boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.5)',
+                                                        padding: '0.5rem',
+                                                        zIndex: 50,
+                                                        display: 'flex',
+                                                        flexDirection: 'column',
+                                                        gap: '0.25rem'
+                                                    },
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            style: {
+                                                                padding: '0.5rem 0.75rem',
+                                                                borderBottom: '1px solid var(--border)',
+                                                                marginBottom: '0.25rem'
+                                                            },
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    style: {
+                                                                        fontSize: '0.8rem',
+                                                                        color: 'var(--text-muted)'
+                                                                    },
+                                                                    children: t.navbar.signedInAs
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                                    lineNumber: 265,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    style: {
+                                                                        fontSize: '0.9rem',
+                                                                        fontWeight: 500,
+                                                                        color: 'var(--foreground)',
+                                                                        textOverflow: 'ellipsis',
+                                                                        overflow: 'hidden',
+                                                                        whiteSpace: 'nowrap'
+                                                                    },
+                                                                    children: user.email
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                                    lineNumber: 266,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                            lineNumber: 264,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        plan === 'free' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            onClick: ()=>{
+                                                                setDropdownOpen(false);
+                                                                onOpenCheckout();
+                                                            },
+                                                            style: {
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                gap: '0.5rem',
+                                                                width: '100%',
+                                                                padding: '0.6rem 0.75rem',
+                                                                border: 'none',
+                                                                background: 'transparent',
+                                                                borderRadius: '8px',
+                                                                color: 'var(--foreground)',
+                                                                textAlign: 'left',
+                                                                cursor: 'pointer',
+                                                                fontSize: '0.875rem'
+                                                            },
+                                                            className: "dropdown-item-hover",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__["CreditCard"], {
+                                                                    size: 16,
+                                                                    color: "var(--primary)"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                                    lineNumber: 293,
+                                                                    columnNumber: 27
+                                                                }, this),
+                                                                t.navbar.billingUpgrade
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                            lineNumber: 272,
+                                                            columnNumber: 25
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            onClick: ()=>{
+                                                                setDropdownOpen(false);
+                                                                logout();
+                                                            },
+                                                            style: {
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                gap: '0.5rem',
+                                                                width: '100%',
+                                                                padding: '0.6rem 0.75rem',
+                                                                border: 'none',
+                                                                background: 'transparent',
+                                                                borderRadius: '8px',
+                                                                color: '#ef4444',
+                                                                textAlign: 'left',
+                                                                cursor: 'pointer',
+                                                                fontSize: '0.875rem'
+                                                            },
+                                                            className: "dropdown-item-hover",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__["LogOut"], {
+                                                                    size: 16
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                                    lineNumber: 319,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                t.navbar.logout
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                            lineNumber: 298,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                                    lineNumber: 249,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                    lineNumber: 222,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                            lineNumber: 165,
+                            columnNumber: 13
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>onOpenAuth('login'),
+                                    style: {
+                                        background: 'transparent',
+                                        border: 'none',
+                                        color: 'var(--foreground)',
+                                        cursor: 'pointer',
+                                        fontSize: '0.95rem',
+                                        fontWeight: 500
+                                    },
+                                    children: t.navbar.login
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                    lineNumber: 329,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>onOpenAuth('register'),
+                                    className: "btn btn-primary",
+                                    style: {
+                                        padding: '0.5rem 1.25rem',
+                                        fontSize: '0.9rem',
+                                        background: 'linear-gradient(to right, var(--primary), #a855f7)'
+                                    },
+                                    children: t.navbar.getStarted
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/src/components/Navbar.tsx",
+                                    lineNumber: 342,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/frontend/src/components/Navbar.tsx",
+                            lineNumber: 328,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/frontend/src/components/Navbar.tsx",
-                    lineNumber: 59,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/frontend/src/components/Navbar.tsx",
-            lineNumber: 30,
+            lineNumber: 31,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/frontend/src/components/Navbar.tsx",
-        lineNumber: 17,
+        lineNumber: 18,
         columnNumber: 5
     }, this);
 }
@@ -538,10 +704,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.mjs [app-ssr] (ecmascript) <export default as Clock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shield-check.mjs [app-ssr] (ecmascript) <export default as ShieldCheck>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/zap.mjs [app-ssr] (ecmascript) <export default as Zap>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/src/components/SaaSProvider.tsx [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
+;
 function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard }) {
+    const { t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
     const handleCta = ()=>{
         if (userLoggedIn) {
             onGoToDashboard();
@@ -584,7 +753,7 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                         }
                     }, void 0, false, {
                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                        lineNumber: 40,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -613,14 +782,14 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                         size: 14
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 67,
+                                        lineNumber: 70,
                                         columnNumber: 13
                                     }, this),
-                                    "AI-Powered Instructional Design"
+                                    t.landing.badge
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 53,
+                                lineNumber: 56,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -634,10 +803,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent'
                                 },
-                                children: "Craft Educational Materials in Seconds"
+                                children: t.landing.title
                             }, void 0, false, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 71,
+                                lineNumber: 74,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -650,10 +819,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                     marginLeft: 'auto',
                                     marginRight: 'auto'
                                 },
-                                children: "Leverage advanced Gemini AI to instantly generate high-fidelity, structured lesson plans, quizzes, assignments, and study guides for any level."
+                                children: t.landing.subtitle
                             }, void 0, false, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 84,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -671,10 +840,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             background: 'linear-gradient(to right, var(--primary), #a855f7)',
                                             boxShadow: '0 4px 20px rgba(99, 102, 241, 0.4)'
                                         },
-                                        children: userLoggedIn ? 'Go to Dashboard' : 'Start Generating Free'
+                                        children: userLoggedIn ? t.landing.ctaDashboard : t.landing.ctaStart
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 100,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -687,28 +856,28 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             border: '1px solid var(--border)',
                                             color: 'var(--foreground)'
                                         },
-                                        children: "View Pricing"
+                                        children: t.landing.ctaPricing
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 112,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 96,
+                                lineNumber: 99,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                        lineNumber: 52,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                lineNumber: 32,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -728,26 +897,26 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                     fontSize: '2.25rem',
                                     marginBottom: '0.75rem'
                                 },
-                                children: "Features Built for Educators"
+                                children: t.landing.featuresTitle
                             }, void 0, false, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 129,
+                                lineNumber: 132,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 style: {
                                     color: 'var(--text-muted)'
                                 },
-                                children: "Everything you need to streamline course and lesson preparation."
+                                children: t.landing.featuresSubtitle
                             }, void 0, false, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 130,
+                                lineNumber: 133,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                        lineNumber: 128,
+                        lineNumber: 131,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -780,12 +949,12 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             size: 24
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                            lineNumber: 151,
+                                            lineNumber: 154,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 140,
+                                        lineNumber: 143,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -793,10 +962,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             fontSize: '1.25rem',
                                             marginBottom: '0.5rem'
                                         },
-                                        children: "Instant AI Generation"
+                                        children: t.landing.feature1Title
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 156,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -804,16 +973,16 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             fontSize: '0.95rem',
                                             color: 'var(--text-muted)'
                                         },
-                                        children: "Input any topic or subject, choose your target educational level, and get curriculum-aligned resources generated instantly."
+                                        children: t.landing.feature1Desc
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 157,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 139,
+                                lineNumber: 142,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -839,12 +1008,12 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             size: 24
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                            lineNumber: 172,
+                                            lineNumber: 175,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 161,
+                                        lineNumber: 164,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -852,10 +1021,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             fontSize: '1.25rem',
                                             marginBottom: '0.5rem'
                                         },
-                                        children: "Markdown Editor"
+                                        children: t.landing.feature2Title
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 177,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -863,16 +1032,16 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             fontSize: '0.95rem',
                                             color: 'var(--text-muted)'
                                         },
-                                        children: "Refine the generated material on the fly. Change wording, add notes, and format easily using the built-in side-by-side text editor."
+                                        children: t.landing.feature2Desc
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 175,
+                                        lineNumber: 178,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 160,
+                                lineNumber: 163,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -898,12 +1067,12 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             size: 24
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                            lineNumber: 193,
+                                            lineNumber: 196,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 182,
+                                        lineNumber: 185,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -911,10 +1080,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             fontSize: '1.25rem',
                                             marginBottom: '0.5rem'
                                         },
-                                        children: "Bulk Export (.zip)"
+                                        children: t.landing.feature3Title
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 195,
+                                        lineNumber: 198,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -922,16 +1091,16 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             fontSize: '0.95rem',
                                             color: 'var(--text-muted)'
                                         },
-                                        children: "Export all files as a single organized bundle. Get markdown files compressed into a ZIP folder ready for your LMS or drive."
+                                        children: t.landing.feature3Desc
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 199,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 181,
+                                lineNumber: 184,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -957,12 +1126,12 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             size: 24
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                            lineNumber: 214,
+                                            lineNumber: 217,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 206,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -970,10 +1139,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             fontSize: '1.25rem',
                                             marginBottom: '0.5rem'
                                         },
-                                        children: "Generation History"
+                                        children: t.landing.feature4Title
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 216,
+                                        lineNumber: 219,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -981,28 +1150,28 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             fontSize: '0.95rem',
                                             color: 'var(--text-muted)'
                                         },
-                                        children: "Save all generated files directly into your history drawer. Re-open, re-edit, or download past lessons at any time."
+                                        children: t.landing.feature4Desc
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 217,
+                                        lineNumber: 220,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 202,
+                                lineNumber: 205,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                        lineNumber: 133,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                lineNumber: 127,
+                lineNumber: 130,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1023,26 +1192,26 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                     fontSize: '2.25rem',
                                     marginBottom: '0.75rem'
                                 },
-                                children: "Flexible Pricing Plans"
+                                children: t.landing.pricingTitle
                             }, void 0, false, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 227,
+                                lineNumber: 230,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 style: {
                                     color: 'var(--text-muted)'
                                 },
-                                children: "Start creating for free, or unlock unlimited potential with Pro."
+                                children: t.landing.pricingSubtitle
                             }, void 0, false, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 228,
+                                lineNumber: 231,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                        lineNumber: 226,
+                        lineNumber: 229,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1071,10 +1240,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                     fontSize: '1.5rem',
                                                     marginBottom: '0.5rem'
                                                 },
-                                                children: "Free Plan"
+                                                children: t.landing.freePlanName
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                lineNumber: 247,
+                                                lineNumber: 250,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1083,10 +1252,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                     fontSize: '0.9rem',
                                                     marginBottom: '1.5rem'
                                                 },
-                                                children: "Perfect for trying out Flyterial"
+                                                children: t.landing.freePlanDesc
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                lineNumber: 248,
+                                                lineNumber: 251,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1101,10 +1270,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                             fontSize: '2.5rem',
                                                             fontWeight: 800
                                                         },
-                                                        children: "$0"
+                                                        children: t.landing.freePlanPrice
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                        lineNumber: 251,
+                                                        lineNumber: 254,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1112,16 +1281,16 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                             color: 'var(--text-muted)',
                                                             marginLeft: '0.25rem'
                                                         },
-                                                        children: "/ forever"
+                                                        children: t.landing.freePlanDuration
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                        lineNumber: 252,
+                                                        lineNumber: 255,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                lineNumber: 250,
+                                                lineNumber: 253,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1147,33 +1316,11 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                                 color: "#10b981"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                                lineNumber: 257,
-                                                                columnNumber: 19
-                                                            }, this),
-                                                            " 3 AI Generations Total"
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                        lineNumber: 256,
-                                                        columnNumber: 17
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                        style: {
-                                                            display: 'flex',
-                                                            alignItems: 'center',
-                                                            gap: '0.75rem',
-                                                            fontSize: '0.95rem'
-                                                        },
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__["ShieldCheck"], {
-                                                                size: 18,
-                                                                color: "#10b981"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/frontend/src/components/LandingPage.tsx",
                                                                 lineNumber: 260,
                                                                 columnNumber: 19
                                                             }, this),
-                                                            " Basic Presets (Lesson + Quiz)"
+                                                            " ",
+                                                            t.landing.freePlanFeature1
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
@@ -1196,7 +1343,8 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                                 lineNumber: 263,
                                                                 columnNumber: 19
                                                             }, this),
-                                                            " Side-by-Side Markdown Editor"
+                                                            " ",
+                                                            t.landing.freePlanFeature2
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
@@ -1219,23 +1367,48 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                                 lineNumber: 266,
                                                                 columnNumber: 19
                                                             }, this),
-                                                            " Local History Sync"
+                                                            " ",
+                                                            t.landing.freePlanFeature3
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
                                                         lineNumber: 265,
                                                         columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                        style: {
+                                                            display: 'flex',
+                                                            alignItems: 'center',
+                                                            gap: '0.75rem',
+                                                            fontSize: '0.95rem'
+                                                        },
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__["ShieldCheck"], {
+                                                                size: 18,
+                                                                color: "#10b981"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/frontend/src/components/LandingPage.tsx",
+                                                                lineNumber: 269,
+                                                                columnNumber: 19
+                                                            }, this),
+                                                            " ",
+                                                            t.landing.freePlanFeature4
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/frontend/src/components/LandingPage.tsx",
+                                                        lineNumber: 268,
+                                                        columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                lineNumber: 255,
+                                                lineNumber: 258,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 246,
+                                        lineNumber: 249,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1249,16 +1422,16 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             padding: '0.85rem',
                                             marginTop: 'auto'
                                         },
-                                        children: userLoggedIn ? 'Go to Dashboard' : 'Get Started'
+                                        children: userLoggedIn ? t.landing.ctaDashboard : t.landing.freePlanCta
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 271,
+                                        lineNumber: 274,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 238,
+                                lineNumber: 241,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1288,10 +1461,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             textTransform: 'uppercase',
                                             letterSpacing: '0.05em'
                                         },
-                                        children: "Popular"
+                                        children: t.landing.popular
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 299,
+                                        lineNumber: 302,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1305,19 +1478,20 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                     gap: '0.5rem'
                                                 },
                                                 children: [
-                                                    "Pro Plan ",
+                                                    t.landing.proPlanName,
+                                                    " ",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
                                                         size: 18,
                                                         color: "#c084fc"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                        lineNumber: 317,
-                                                        columnNumber: 26
+                                                        lineNumber: 320,
+                                                        columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                lineNumber: 316,
+                                                lineNumber: 319,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1326,10 +1500,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                     fontSize: '0.9rem',
                                                     marginBottom: '1.5rem'
                                                 },
-                                                children: "For educators who need unlimited creation power"
+                                                children: t.landing.proPlanDesc
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                lineNumber: 319,
+                                                lineNumber: 322,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1344,10 +1518,10 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                             fontSize: '2.5rem',
                                                             fontWeight: 800
                                                         },
-                                                        children: "$15"
+                                                        children: t.landing.proPlanPrice
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                        lineNumber: 322,
+                                                        lineNumber: 325,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1355,16 +1529,16 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                             color: 'var(--text-muted)',
                                                             marginLeft: '0.25rem'
                                                         },
-                                                        children: "/ month"
+                                                        children: t.landing.proPlanDuration
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                        lineNumber: 323,
+                                                        lineNumber: 326,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                lineNumber: 321,
+                                                lineNumber: 324,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1391,33 +1565,11 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                                 color: "#10b981"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                                lineNumber: 328,
-                                                                columnNumber: 19
-                                                            }, this),
-                                                            " **Unlimited** Generations"
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                        lineNumber: 327,
-                                                        columnNumber: 17
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                        style: {
-                                                            display: 'flex',
-                                                            alignItems: 'center',
-                                                            gap: '0.75rem',
-                                                            fontSize: '0.95rem'
-                                                        },
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__["ShieldCheck"], {
-                                                                size: 18,
-                                                                color: "#10b981"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/frontend/src/components/LandingPage.tsx",
                                                                 lineNumber: 331,
                                                                 columnNumber: 19
                                                             }, this),
-                                                            " All Presets (Modules, Guides, etc.)"
+                                                            " ",
+                                                            t.landing.proPlanFeature1
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
@@ -1440,7 +1592,8 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                                 lineNumber: 334,
                                                                 columnNumber: 19
                                                             }, this),
-                                                            " Faster AI generation speeds"
+                                                            " ",
+                                                            t.landing.proPlanFeature2
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
@@ -1463,7 +1616,8 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                                 lineNumber: 337,
                                                                 columnNumber: 19
                                                             }, this),
-                                                            " Full History drawer management"
+                                                            " ",
+                                                            t.landing.proPlanFeature3
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
@@ -1486,23 +1640,48 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                                                 lineNumber: 340,
                                                                 columnNumber: 19
                                                             }, this),
-                                                            " Priority email support"
+                                                            " ",
+                                                            t.landing.proPlanFeature4
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
                                                         lineNumber: 339,
                                                         columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                        style: {
+                                                            display: 'flex',
+                                                            alignItems: 'center',
+                                                            gap: '0.75rem',
+                                                            fontSize: '0.95rem'
+                                                        },
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__["ShieldCheck"], {
+                                                                size: 18,
+                                                                color: "#10b981"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/frontend/src/components/LandingPage.tsx",
+                                                                lineNumber: 343,
+                                                                columnNumber: 19
+                                                            }, this),
+                                                            " ",
+                                                            t.landing.proPlanFeature5
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/frontend/src/components/LandingPage.tsx",
+                                                        lineNumber: 342,
+                                                        columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                                lineNumber: 326,
+                                                lineNumber: 329,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 315,
+                                        lineNumber: 318,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1515,34 +1694,34 @@ function LandingPage({ onOpenAuth, onOpenCheckout, userLoggedIn, onGoToDashboard
                                             marginTop: 'auto',
                                             boxShadow: '0 4px 15px rgba(168, 85, 247, 0.3)'
                                         },
-                                        children: "Upgrade to Pro"
+                                        children: t.landing.proPlanCta
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                        lineNumber: 345,
+                                        lineNumber: 348,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                                lineNumber: 288,
+                                lineNumber: 291,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                        lineNumber: 231,
+                        lineNumber: 234,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/src/components/LandingPage.tsx",
-                lineNumber: 225,
+                lineNumber: 228,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/src/components/LandingPage.tsx",
-        lineNumber: 30,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }
@@ -1566,7 +1745,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 function AuthModal({ initialMode, onClose, onSuccess }) {
-    const { login, register } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
+    const { login, register, t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
     const [mode, setMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(initialMode);
     const [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [password, setPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
@@ -1577,11 +1756,11 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
         e.preventDefault();
         setError('');
         if (!email || !password) {
-            setError('Please fill in all fields.');
+            setError(t.auth.fillFieldsError);
             return;
         }
         if (mode === 'register' && password !== confirmPassword) {
-            setError('Passwords do not match.');
+            setError(t.auth.passwordMismatch);
             return;
         }
         setLoading(true);
@@ -1598,11 +1777,11 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
                     onSuccess();
                     onClose();
                 } else {
-                    setError('Authentication failed. Please check your credentials.');
+                    setError(t.auth.authFailed);
                 }
             } catch (err) {
                 setLoading(false);
-                setError(err?.message || 'Connection to authentication service failed.');
+                setError(err instanceof Error ? err.message : t.auth.connectionFailed);
             }
         })();
     };
@@ -1669,7 +1848,7 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
                                 fontSize: '1.75rem',
                                 marginBottom: '0.5rem'
                             },
-                            children: mode === 'login' ? 'Welcome Back' : 'Create Account'
+                            children: mode === 'login' ? t.auth.welcomeBack : t.auth.createAccount
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/AuthModal.tsx",
                             lineNumber: 107,
@@ -1680,7 +1859,7 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
                                 color: 'var(--text-muted)',
                                 fontSize: '0.9rem'
                             },
-                            children: mode === 'login' ? 'Access your educational generator dashboard' : 'Sign up to generate assessment materials'
+                            children: mode === 'login' ? t.auth.welcomeSub : t.auth.createSub
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/AuthModal.tsx",
                             lineNumber: 110,
@@ -1716,7 +1895,7 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                     htmlFor: "auth-email",
-                                    children: "Email Address"
+                                    children: t.auth.emailLabel
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/AuthModal.tsx",
                                     lineNumber: 133,
@@ -1772,7 +1951,7 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                     htmlFor: "auth-password",
-                                    children: "Password"
+                                    children: t.auth.passwordLabel
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/AuthModal.tsx",
                                     lineNumber: 155,
@@ -1828,7 +2007,7 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                     htmlFor: "auth-confirm",
-                                    children: "Confirm Password"
+                                    children: t.auth.confirmPasswordLabel
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/AuthModal.tsx",
                                     lineNumber: 178,
@@ -1890,7 +2069,7 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
                                 background: 'linear-gradient(to right, var(--primary), #a855f7)'
                             },
                             disabled: loading,
-                            children: loading ? 'Processing...' : mode === 'login' ? 'Log In' : 'Sign Up'
+                            children: loading ? t.common.processing : mode === 'login' ? t.auth.loginBtn : t.auth.signupBtn
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/AuthModal.tsx",
                             lineNumber: 200,
@@ -1913,7 +2092,7 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
                             style: {
                                 color: 'var(--text-muted)'
                             },
-                            children: mode === 'login' ? "Don't have an account? " : "Already have an account? "
+                            children: mode === 'login' ? t.auth.dontHaveAccount : t.auth.alreadyAccount
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/AuthModal.tsx",
                             lineNumber: 217,
@@ -1933,7 +2112,7 @@ function AuthModal({ initialMode, onClose, onSuccess }) {
                                 textDecoration: 'underline',
                                 padding: 0
                             },
-                            children: mode === 'login' ? 'Sign up' : 'Log in'
+                            children: mode === 'login' ? t.auth.signupLink : t.auth.loginLink
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/AuthModal.tsx",
                             lineNumber: 220,
@@ -1979,7 +2158,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 function CheckoutModal({ onClose, onSuccess }) {
-    const { upgradePlan } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
+    const { upgradePlan, t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [success, setSuccess] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [cardName, setCardName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
@@ -2110,7 +2289,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                 marginBottom: '0.75rem',
                                 color: '#10b981'
                             },
-                            children: "Payment Successful!"
+                            children: t.checkout.successTitle
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                             lineNumber: 117,
@@ -2122,7 +2301,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                 fontWeight: 500,
                                 marginBottom: '0.5rem'
                             },
-                            children: "You are now a PRO Educator"
+                            children: t.checkout.successStatus
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                             lineNumber: 118,
@@ -2134,7 +2313,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                 fontSize: '0.9rem',
                                 marginBottom: '2rem'
                             },
-                            children: "Your quota has been upgraded to **Unlimited**. You now have access to all structures, full modules, and comprehensive study guides!"
+                            children: t.checkout.successDesc
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                             lineNumber: 119,
@@ -2149,7 +2328,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                 fontSize: '1rem',
                                 boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)'
                             },
-                            children: "Start Generating"
+                            children: t.checkout.successCta
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                             lineNumber: 122,
@@ -2173,7 +2352,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                         fontSize: '1.5rem',
                                         marginBottom: '0.5rem'
                                     },
-                                    children: "Upgrade to Flyterial Pro"
+                                    children: t.checkout.upgradeTitle
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                     lineNumber: 139,
@@ -2184,7 +2363,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                         color: 'var(--text-muted)',
                                         fontSize: '0.9rem'
                                     },
-                                    children: "Secure payment powered by mock Stripe checkout"
+                                    children: t.checkout.upgradeSub
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                     lineNumber: 140,
@@ -2216,7 +2395,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                                 fontWeight: 500,
                                                 color: 'var(--foreground)'
                                             },
-                                            children: "Flyterial Pro (Monthly)"
+                                            children: t.checkout.summaryTitle
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                             lineNumber: 154,
@@ -2227,7 +2406,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                                 fontWeight: 600,
                                                 color: 'var(--foreground)'
                                             },
-                                            children: "$15.00"
+                                            children: t.checkout.summaryPrice
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                             lineNumber: 155,
@@ -2247,14 +2426,14 @@ function CheckoutModal({ onClose, onSuccess }) {
                                     },
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "Billed monthly. Cancel anytime."
+                                            children: t.checkout.summarySub
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                             lineNumber: 158,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "$15.00/mo"
+                                            children: t.checkout.summaryDetailPrice
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                             lineNumber: 159,
@@ -2280,7 +2459,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             htmlFor: "card-name",
-                                            children: "Cardholder Name"
+                                            children: t.checkout.cardholderName
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                             lineNumber: 166,
@@ -2309,7 +2488,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             htmlFor: "card-number",
-                                            children: "Card Number"
+                                            children: t.checkout.cardNumber
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                             lineNumber: 179,
@@ -2373,7 +2552,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                     htmlFor: "card-expiry",
-                                                    children: "Expiration Date"
+                                                    children: t.checkout.expirationDate
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                                     lineNumber: 204,
@@ -2434,7 +2613,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                     htmlFor: "card-cvc",
-                                                    children: "CVC"
+                                                    children: t.checkout.cvc
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                                     lineNumber: 227,
@@ -2505,7 +2684,7 @@ function CheckoutModal({ onClose, onSuccess }) {
                                         boxShadow: '0 4px 15px rgba(99, 102, 241, 0.3)'
                                     },
                                     disabled: loading,
-                                    children: loading ? 'Processing Securely...' : 'Pay $15.00'
+                                    children: loading ? t.checkout.processing : t.checkout.payBtn
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/CheckoutModal.tsx",
                                     lineNumber: 251,
@@ -2547,11 +2726,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.mjs [app-ssr] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$share$2d$2$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Share2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/share-2.mjs [app-ssr] (ecmascript) <export default as Share2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/src/components/SaaSProvider.tsx [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
 ;
+;
 function SharePresetModal({ onClose, onShare }) {
+    const { t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
     const [name, setName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [level, setLevel] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('highschool');
     const [structure, setStructure] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
@@ -2562,14 +2744,14 @@ function SharePresetModal({ onClose, onShare }) {
         e.preventDefault();
         setError('');
         if (!name || !structure || !description) {
-            setError('Please fill in all fields.');
+            setError(t.sharePreset.fillFieldsError);
             return;
         }
         setLoading(true);
         const success = await onShare(name, level, structure, description);
         setLoading(false);
         if (!success) {
-            setError('Failed to share preset. Please try again.');
+            setError(t.sharePreset.shareFailed);
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2616,12 +2798,12 @@ function SharePresetModal({ onClose, onShare }) {
                         size: 20
                     }, void 0, false, {
                         fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                        lineNumber: 76,
+                        lineNumber: 78,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                    lineNumber: 59,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2645,14 +2827,15 @@ function SharePresetModal({ onClose, onShare }) {
                                     color: "var(--primary)"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 84,
                                     columnNumber: 13
                                 }, this),
-                                " Share Custom Preset"
+                                " ",
+                                t.sharePreset.title
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                            lineNumber: 81,
+                            lineNumber: 83,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2660,16 +2843,16 @@ function SharePresetModal({ onClose, onShare }) {
                                 color: 'var(--text-muted)',
                                 fontSize: '0.9rem'
                             },
-                            children: "Design a custom structure preset and share it with the Flyterial community"
+                            children: t.sharePreset.subtitle
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                            lineNumber: 84,
+                            lineNumber: 86,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                    lineNumber: 80,
+                    lineNumber: 82,
                     columnNumber: 9
                 }, this),
                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2685,7 +2868,7 @@ function SharePresetModal({ onClose, onShare }) {
                     children: error
                 }, void 0, false, {
                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                    lineNumber: 91,
+                    lineNumber: 93,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -2696,10 +2879,10 @@ function SharePresetModal({ onClose, onShare }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                     htmlFor: "preset-name",
-                                    children: "Preset Name"
+                                    children: t.sharePreset.nameLabel
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 109,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2708,17 +2891,17 @@ function SharePresetModal({ onClose, onShare }) {
                                     required: true,
                                     value: name,
                                     onChange: (e)=>setName(e.target.value),
-                                    placeholder: "e.g. Biology Lab & Quiz, Essay Outline...",
+                                    placeholder: t.sharePreset.namePlaceholder,
                                     disabled: loading
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                            lineNumber: 106,
+                            lineNumber: 108,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2728,10 +2911,10 @@ function SharePresetModal({ onClose, onShare }) {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                         htmlFor: "preset-level",
-                                        children: "Target Level"
+                                        children: t.sharePreset.levelLabel
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 123,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -2742,53 +2925,53 @@ function SharePresetModal({ onClose, onShare }) {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                 value: "elementary",
-                                                children: "Elementary School"
+                                                children: t.common.elementary
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 125,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                 value: "highschool",
-                                                children: "High School"
+                                                children: t.common.highschool
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 126,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                 value: "undergrad",
-                                                children: "Undergraduate"
+                                                children: t.common.undergrad
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 127,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 124,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                lineNumber: 120,
+                                lineNumber: 122,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                            lineNumber: 119,
+                            lineNumber: 121,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                     htmlFor: "preset-structure",
-                                    children: "Structure Details"
+                                    children: t.sharePreset.structureLabel
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                    lineNumber: 131,
+                                    lineNumber: 133,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -2797,27 +2980,27 @@ function SharePresetModal({ onClose, onShare }) {
                                     rows: 2,
                                     value: structure,
                                     onChange: (e)=>setStructure(e.target.value),
-                                    placeholder: "e.g. 1 Lesson Outline, 1 Classroom Activity sheet, and 1 Grading Rubric",
+                                    placeholder: t.sharePreset.structurePlaceholder,
                                     disabled: loading
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 134,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                            lineNumber: 130,
+                            lineNumber: 132,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                     htmlFor: "preset-desc",
-                                    children: "Description"
+                                    children: t.sharePreset.descriptionLabel
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 146,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -2826,17 +3009,17 @@ function SharePresetModal({ onClose, onShare }) {
                                     rows: 3,
                                     value: description,
                                     onChange: (e)=>setDescription(e.target.value),
-                                    placeholder: "Describe what resources this preset will generate...",
+                                    placeholder: t.sharePreset.descriptionPlaceholder,
                                     disabled: loading
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                                    lineNumber: 145,
+                                    lineNumber: 147,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                            lineNumber: 143,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2849,27 +3032,27 @@ function SharePresetModal({ onClose, onShare }) {
                                 background: 'linear-gradient(to right, var(--primary), #a855f7)'
                             },
                             disabled: loading,
-                            children: loading ? 'Sharing...' : 'Share with Community ✨'
+                            children: loading ? t.sharePreset.sharing : t.sharePreset.shareBtn
                         }, void 0, false, {
                             fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                            lineNumber: 156,
+                            lineNumber: 158,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-                    lineNumber: 105,
+                    lineNumber: 107,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-            lineNumber: 50,
+            lineNumber: 52,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/frontend/src/components/SharePresetModal.tsx",
-        lineNumber: 38,
+        lineNumber: 40,
         columnNumber: 5
     }, this);
 }
@@ -2914,7 +3097,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$component
 ;
 ;
 function Home() {
-    const { user, plan, generationsUsed, generationsLimit, history, addGeneration, deleteHistoryItem, presets, sharePreset } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
+    const { user, plan, generationsUsed, generationsLimit, history, addGeneration, deleteHistoryItem, presets, sharePreset, locale, t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SaaSProvider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSaaS"])();
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [documents, setDocuments] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [activeDoc, setActiveDoc] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
@@ -2954,7 +3137,8 @@ function Home() {
                 },
                 body: JSON.stringify({
                     ...formData,
-                    customStructure: customPreset ? customPreset.structure : undefined
+                    customStructure: customPreset ? customPreset.structure : undefined,
+                    lang: locale
                 })
             });
             const data = await res.json();
@@ -2964,10 +3148,10 @@ function Home() {
                 // Save to SaaS Provider history
                 addGeneration(formData.subject, formData.level, formData.preset, formData.context, data.documents);
             } else {
-                alert('Error generating documents: ' + (data.error || 'Unknown error'));
+                alert(t.dashboard.errorGenerate + (data.error || 'Unknown error'));
             }
-        } catch (err) {
-            alert('Failed to connect to generation service.');
+        } catch  {
+            alert(t.dashboard.errorConnection);
         } finally{
             setLoading(false);
         }
@@ -3018,7 +3202,7 @@ function Home() {
                     onOpenCheckout: openCheckout
                 }, void 0, false, {
                     fileName: "[project]/frontend/src/app/page.tsx",
-                    lineNumber: 128,
+                    lineNumber: 131,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$LandingPage$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3028,7 +3212,7 @@ function Home() {
                     onGoToDashboard: ()=>{}
                 }, void 0, false, {
                     fileName: "[project]/frontend/src/app/page.tsx",
-                    lineNumber: 129,
+                    lineNumber: 132,
                     columnNumber: 9
                 }, this),
                 showAuthModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$AuthModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3037,13 +3221,13 @@ function Home() {
                     onSuccess: ()=>{}
                 }, void 0, false, {
                     fileName: "[project]/frontend/src/app/page.tsx",
-                    lineNumber: 137,
+                    lineNumber: 140,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/frontend/src/app/page.tsx",
-            lineNumber: 127,
+            lineNumber: 130,
             columnNumber: 7
         }, this);
     }
@@ -3059,7 +3243,7 @@ function Home() {
                 onOpenCheckout: openCheckout
             }, void 0, false, {
                 fileName: "[project]/frontend/src/app/page.tsx",
-                lineNumber: 150,
+                lineNumber: 153,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -3096,14 +3280,15 @@ function Home() {
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 160,
+                                            lineNumber: 163,
                                             columnNumber: 17
                                         }, this),
-                                        " Back to Dashboard"
+                                        " ",
+                                        t.dashboard.backBtn
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 159,
+                                    lineNumber: 162,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3117,20 +3302,21 @@ function Home() {
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 163,
+                                            lineNumber: 166,
                                             columnNumber: 17
                                         }, this),
-                                        " Download All (.zip)"
+                                        " ",
+                                        t.dashboard.downloadBtn
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 162,
+                                    lineNumber: 165,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/src/app/page.tsx",
-                            lineNumber: 158,
+                            lineNumber: 161,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3157,10 +3343,10 @@ function Home() {
                                                 fontWeight: 600,
                                                 color: 'var(--foreground)'
                                             },
-                                            children: "Generated Files"
+                                            children: t.dashboard.generatedFiles
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 170,
+                                            lineNumber: 173,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3186,7 +3372,7 @@ function Home() {
                                                             size: 16
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                                            lineNumber: 188,
+                                                            lineNumber: 191,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3199,24 +3385,24 @@ function Home() {
                                                             children: doc.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                                            lineNumber: 189,
+                                                            lineNumber: 192,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, idx, true, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 173,
+                                                    lineNumber: 176,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 171,
+                                            lineNumber: 174,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 169,
+                                    lineNumber: 172,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3238,24 +3424,24 @@ function Home() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/src/app/page.tsx",
-                                        lineNumber: 197,
+                                        lineNumber: 200,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 196,
+                                    lineNumber: 199,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/src/app/page.tsx",
-                            lineNumber: 167,
+                            lineNumber: 170,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/src/app/page.tsx",
-                    lineNumber: 157,
+                    lineNumber: 160,
                     columnNumber: 11
                 }, this) : /* Creator Dashboard View (Form + History) */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex gap-6",
@@ -3287,7 +3473,7 @@ function Home() {
                                             color: "var(--primary)"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 215,
+                                            lineNumber: 218,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3295,16 +3481,16 @@ function Home() {
                                                 fontSize: '1rem',
                                                 fontWeight: 600
                                             },
-                                            children: "Generation History"
+                                            children: t.dashboard.historyHeader
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 216,
+                                            lineNumber: 219,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 217,
                                     columnNumber: 15
                                 }, this),
                                 history.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3316,7 +3502,7 @@ function Home() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(HistoryPlaceholder, {}, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 221,
+                                            lineNumber: 224,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3324,16 +3510,16 @@ function Home() {
                                                 fontSize: '0.85rem',
                                                 marginTop: '1rem'
                                             },
-                                            children: "Your generated educational materials will appear here for easy access."
+                                            children: t.dashboard.historyPlaceholder
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 222,
+                                            lineNumber: 225,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 220,
+                                    lineNumber: 223,
                                     columnNumber: 17
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex-col gap-3",
@@ -3392,12 +3578,12 @@ function Home() {
                                                         size: 14
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/src/app/page.tsx",
-                                                        lineNumber: 274,
+                                                        lineNumber: 277,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 253,
+                                                    lineNumber: 256,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3413,7 +3599,7 @@ function Home() {
                                                     children: item.subject
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 277,
+                                                    lineNumber: 280,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3425,11 +3611,11 @@ function Home() {
                                                     children: [
                                                         item.level,
                                                         " • ",
-                                                        item.preset === 'lesson-quiz' ? 'Lesson + Quiz' : item.preset === 'full-module' ? 'Full Module' : 'Study Guide'
+                                                        item.preset === 'lesson-quiz' ? t.common.lessonQuiz : item.preset === 'full-module' ? t.common.fullModule : t.common.studyGuide
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 280,
+                                                    lineNumber: 283,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3441,24 +3627,24 @@ function Home() {
                                                     children: item.date
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 283,
+                                                    lineNumber: 286,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, item.id, true, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 227,
+                                            lineNumber: 230,
                                             columnNumber: 21
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 225,
+                                    lineNumber: 228,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/src/app/page.tsx",
-                            lineNumber: 213,
+                            lineNumber: 216,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3491,7 +3677,7 @@ function Home() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 296,
+                                            lineNumber: 299,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3499,10 +3685,10 @@ function Home() {
                                             style: {
                                                 color: 'var(--foreground)'
                                             },
-                                            children: "Crafting educational magic..."
+                                            children: t.dashboard.loadingTitle
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 297,
+                                            lineNumber: 300,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3510,16 +3696,16 @@ function Home() {
                                                 fontSize: '0.9rem',
                                                 color: 'var(--text-muted)'
                                             },
-                                            children: "Generating structured curriculum documents via Gemini"
+                                            children: t.dashboard.loadingSubtitle
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 298,
+                                            lineNumber: 301,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 295,
+                                    lineNumber: 298,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3536,10 +3722,10 @@ function Home() {
                                                 WebkitBackgroundClip: 'text',
                                                 WebkitTextFillColor: 'transparent'
                                             },
-                                            children: "Educational Material Generator"
+                                            children: t.dashboard.generatorTitle
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 303,
+                                            lineNumber: 306,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3547,16 +3733,16 @@ function Home() {
                                                 fontSize: '1rem',
                                                 color: 'var(--text-muted)'
                                             },
-                                            children: "Enter your topic and parameters to craft rich curriculum assets."
+                                            children: t.dashboard.generatorSubtitle
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 306,
+                                            lineNumber: 309,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 302,
+                                    lineNumber: 305,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -3567,10 +3753,10 @@ function Home() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                     htmlFor: "subject",
-                                                    children: "Subject / Topic"
+                                                    children: t.dashboard.subjectLabel
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 311,
+                                                    lineNumber: 314,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3582,16 +3768,16 @@ function Home() {
                                                             ...formData,
                                                             subject: e.target.value
                                                         }),
-                                                    placeholder: "e.g. Cellular Biology, World War II..."
+                                                    placeholder: t.dashboard.subjectPlaceholder
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 312,
+                                                    lineNumber: 315,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 310,
+                                            lineNumber: 313,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3602,10 +3788,10 @@ function Home() {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                             htmlFor: "level",
-                                                            children: "Educational Level"
+                                                            children: t.dashboard.levelLabel
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                                            lineNumber: 324,
+                                                            lineNumber: 327,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -3618,38 +3804,38 @@ function Home() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                     value: "elementary",
-                                                                    children: "Elementary School"
+                                                                    children: t.common.elementary
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                                    lineNumber: 326,
+                                                                    lineNumber: 329,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                     value: "highschool",
-                                                                    children: "High School"
+                                                                    children: t.common.highschool
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                                    lineNumber: 327,
+                                                                    lineNumber: 330,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                     value: "undergrad",
-                                                                    children: "Undergraduate"
+                                                                    children: t.common.undergrad
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                                    lineNumber: 328,
+                                                                    lineNumber: 331,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                                            lineNumber: 325,
+                                                            lineNumber: 328,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 323,
+                                                    lineNumber: 326,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3668,10 +3854,10 @@ function Home() {
                                                                     style: {
                                                                         margin: 0
                                                                     },
-                                                                    children: "Structural Preset"
+                                                                    children: t.dashboard.presetLabel
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                                    lineNumber: 333,
+                                                                    lineNumber: 336,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3693,16 +3879,16 @@ function Home() {
                                                                         fontWeight: 500,
                                                                         padding: 0
                                                                     },
-                                                                    children: "+ Share Preset"
+                                                                    children: t.dashboard.sharePresetLink
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                                    lineNumber: 334,
+                                                                    lineNumber: 337,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                                            lineNumber: 332,
+                                                            lineNumber: 335,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -3712,65 +3898,67 @@ function Home() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                     value: "lesson-quiz",
-                                                                    children: "1 Lesson Plan + 1 Quiz (Free)"
+                                                                    children: t.dashboard.presetFreeOption
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                                    lineNumber: 362,
+                                                                    lineNumber: 365,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                     value: "full-module",
-                                                                    children: plan === 'pro' ? '2 Classes + 2 Quizzes + 1 Assignment' : 'Full Module (PRO Only 🔒)'
+                                                                    children: plan === 'pro' ? t.dashboard.presetProOption : t.dashboard.presetProOptionLocked
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                                    lineNumber: 363,
+                                                                    lineNumber: 366,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                     value: "study-guide",
-                                                                    children: plan === 'pro' ? 'Comprehensive Study Guide' : 'Comprehensive Study Guide (PRO Only 🔒)'
+                                                                    children: plan === 'pro' ? t.dashboard.presetStudyOption : t.dashboard.presetStudyOptionLocked
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                                    lineNumber: 366,
+                                                                    lineNumber: 369,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 presets.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         value: p.id,
                                                                         children: [
                                                                             p.name,
-                                                                            " (Community)"
+                                                                            " (",
+                                                                            t.dashboard.presetCommunitySuffix,
+                                                                            ")"
                                                                         ]
                                                                     }, p.id, true, {
                                                                         fileName: "[project]/frontend/src/app/page.tsx",
-                                                                        lineNumber: 370,
+                                                                        lineNumber: 373,
                                                                         columnNumber: 25
                                                                     }, this))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                                            lineNumber: 357,
+                                                            lineNumber: 360,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 331,
+                                                    lineNumber: 334,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 322,
+                                            lineNumber: 325,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                     htmlFor: "context",
-                                                    children: "Additional Context (Optional)"
+                                                    children: t.dashboard.contextLabel
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 377,
+                                                    lineNumber: 380,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -3781,16 +3969,16 @@ function Home() {
                                                             ...formData,
                                                             context: e.target.value
                                                         }),
-                                                    placeholder: "Specific focus areas, standards, or learning goals to customize the output..."
+                                                    placeholder: t.dashboard.contextPlaceholder
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 378,
+                                                    lineNumber: 381,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 376,
+                                            lineNumber: 379,
                                             columnNumber: 17
                                         }, this),
                                         plan === 'free' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3814,10 +4002,10 @@ function Home() {
                                                     },
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            children: "Quota:"
+                                                            children: t.dashboard.quotaLabel
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                                            lineNumber: 399,
+                                                            lineNumber: 402,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3829,17 +4017,18 @@ function Home() {
                                                                 generationsUsed,
                                                                 " / ",
                                                                 generationsLimit,
-                                                                " free generations used"
+                                                                " ",
+                                                                t.dashboard.quotaDesc
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                                            lineNumber: 400,
+                                                            lineNumber: 403,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 398,
+                                                    lineNumber: 401,
                                                     columnNumber: 21
                                                 }, this),
                                                 generationsUsed >= generationsLimit ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3856,24 +4045,25 @@ function Home() {
                                                         gap: '0.25rem'
                                                     },
                                                     children: [
-                                                        "Unlock PRO ",
+                                                        t.dashboard.quotaUnlockPro,
+                                                        " ",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                             size: 14
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                                            lineNumber: 417,
-                                                            columnNumber: 36
+                                                            lineNumber: 420,
+                                                            columnNumber: 54
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                                    lineNumber: 403,
+                                                    lineNumber: 406,
                                                     columnNumber: 23
                                                 }, this) : null
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 388,
+                                            lineNumber: 391,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3899,48 +4089,49 @@ function Home() {
                                                         size: 18
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/src/app/page.tsx",
-                                                        lineNumber: 437,
+                                                        lineNumber: 440,
                                                         columnNumber: 23
                                                     }, this),
-                                                    " Upgrade to Generate ✨"
+                                                    " ",
+                                                    t.dashboard.upgradeBtn
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/src/app/page.tsx",
-                                                lineNumber: 436,
+                                                lineNumber: 439,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "Generate Resources ✨"
+                                                children: t.dashboard.generateBtn
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/src/app/page.tsx",
-                                                lineNumber: 440,
+                                                lineNumber: 443,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/src/app/page.tsx",
-                                            lineNumber: 423,
+                                            lineNumber: 426,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/src/app/page.tsx",
-                                    lineNumber: 309,
+                                    lineNumber: 312,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/src/app/page.tsx",
-                            lineNumber: 293,
+                            lineNumber: 296,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/src/app/page.tsx",
-                    lineNumber: 210,
+                    lineNumber: 213,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/src/app/page.tsx",
-                lineNumber: 153,
+                lineNumber: 156,
                 columnNumber: 7
             }, this),
             showAuthModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$AuthModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3949,14 +4140,14 @@ function Home() {
                 onSuccess: ()=>{}
             }, void 0, false, {
                 fileName: "[project]/frontend/src/app/page.tsx",
-                lineNumber: 451,
+                lineNumber: 454,
                 columnNumber: 9
             }, this),
             showCheckoutModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$CheckoutModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 onClose: ()=>setShowCheckoutModal(false)
             }, void 0, false, {
                 fileName: "[project]/frontend/src/app/page.tsx",
-                lineNumber: 459,
+                lineNumber: 462,
                 columnNumber: 9
             }, this),
             showSharePresetModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$src$2f$components$2f$SharePresetModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3966,13 +4157,13 @@ function Home() {
                 }
             }, void 0, false, {
                 fileName: "[project]/frontend/src/app/page.tsx",
-                lineNumber: 465,
+                lineNumber: 468,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/src/app/page.tsx",
-        lineNumber: 149,
+        lineNumber: 152,
         columnNumber: 5
     }, this);
 }
@@ -3999,17 +4190,17 @@ function HistoryPlaceholder() {
                 size: 28
             }, void 0, false, {
                 fileName: "[project]/frontend/src/app/page.tsx",
-                lineNumber: 491,
+                lineNumber: 494,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/frontend/src/app/page.tsx",
-            lineNumber: 480,
+            lineNumber: 483,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/frontend/src/app/page.tsx",
-        lineNumber: 479,
+        lineNumber: 482,
         columnNumber: 5
     }, this);
 }

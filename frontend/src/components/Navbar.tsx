@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useSaaS } from './SaaSProvider';
-import { User, LogOut, CreditCard, Sparkles } from 'lucide-react';
+import { User, LogOut, CreditCard, Sparkles, Globe, ChevronDown } from 'lucide-react';
 
 interface NavbarProps {
   onOpenAuth: (mode: 'login' | 'register') => void;
@@ -10,8 +10,9 @@ interface NavbarProps {
 }
 
 export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
-  const { user, plan, generationsUsed, generationsLimit, logout } = useSaaS();
+  const { user, plan, generationsUsed, generationsLimit, logout, locale, setLocale, t } = useSaaS();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
   return (
     <header style={{
@@ -57,6 +58,109 @@ export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
         </div>
 
         <nav className="flex items-center gap-6">
+          {/* Language Selector */}
+          <div style={{ position: 'relative' }}>
+            <button
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid var(--border)',
+                borderRadius: '8px',
+                padding: '0.4rem 0.75rem',
+                fontSize: '0.85rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                cursor: 'pointer',
+                color: 'var(--foreground)',
+                transition: 'all 0.2s'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)'}
+            >
+              <Globe size={14} color="var(--primary)" />
+              <span>{locale === 'en' ? '🇺🇸 EN' : '🇧🇷 PT'}</span>
+              <ChevronDown size={12} style={{
+                transform: langDropdownOpen ? 'rotate(180deg)' : 'none',
+                transition: 'transform 0.2s',
+                color: 'var(--text-muted)'
+              }} />
+            </button>
+
+            {langDropdownOpen && (
+              <>
+                <div
+                  onClick={() => setLangDropdownOpen(false)}
+                  style={{ position: 'fixed', inset: 0, zIndex: 40 }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  right: 0,
+                  marginTop: '0.5rem',
+                  width: '120px',
+                  background: '#0b0f19',
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius)',
+                  boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.5)',
+                  padding: '0.25rem',
+                  zIndex: 50,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.15rem'
+                }}>
+                  <button
+                    onClick={() => {
+                      setLocale('en');
+                      setLangDropdownOpen(false);
+                    }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      width: '100%',
+                      padding: '0.5rem 0.75rem',
+                      border: 'none',
+                      background: locale === 'en' ? 'rgba(99, 102, 241, 0.1)' : 'transparent',
+                      borderRadius: '6px',
+                      color: 'var(--foreground)',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      fontSize: '0.85rem',
+                      fontWeight: locale === 'en' ? 600 : 400
+                    }}
+                    className="dropdown-item-hover"
+                  >
+                    🇺🇸 English
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLocale('pt');
+                      setLangDropdownOpen(false);
+                    }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      width: '100%',
+                      padding: '0.5rem 0.75rem',
+                      border: 'none',
+                      background: locale === 'pt' ? 'rgba(99, 102, 241, 0.1)' : 'transparent',
+                      borderRadius: '6px',
+                      color: 'var(--foreground)',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      fontSize: '0.85rem',
+                      fontWeight: locale === 'pt' ? 600 : 400
+                    }}
+                    className="dropdown-item-hover"
+                  >
+                    🇧🇷 Português
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+
           {user ? (
             <div className="flex items-center gap-4">
               {/* Quota display for Free tier */}
@@ -71,7 +175,7 @@ export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
                     border: '1px solid var(--border)'
                   }}
                 >
-                  <span style={{ color: 'var(--text-muted)' }}>Usage:</span>
+                  <span style={{ color: 'var(--text-muted)' }}>{t.navbar.usage}:</span>
                   <span style={{ fontWeight: 600, color: 'var(--foreground)' }}>
                     {generationsUsed} / {generationsLimit}
                   </span>
@@ -90,7 +194,7 @@ export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
                   }}
                 >
                   <Sparkles size={13} />
-                  PRO Plan
+                  {t.navbar.proPlan}
                 </div>
               )}
 
@@ -110,7 +214,7 @@ export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
                   }}
                 >
                   <Sparkles size={14} />
-                  Upgrade
+                  {t.navbar.upgrade}
                 </button>
               )}
 
@@ -158,7 +262,7 @@ export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
                       gap: '0.25rem'
                     }}>
                       <div style={{ padding: '0.5rem 0.75rem', borderBottom: '1px solid var(--border)', marginBottom: '0.25rem' }}>
-                        <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Signed in as</p>
+                        <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{t.navbar.signedInAs}</p>
                         <p style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--foreground)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                           {user.email}
                         </p>
@@ -187,7 +291,7 @@ export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
                           className="dropdown-item-hover"
                         >
                           <CreditCard size={16} color="var(--primary)" />
-                          Billing / Upgrade
+                          {t.navbar.billingUpgrade}
                         </button>
                       )}
 
@@ -213,7 +317,7 @@ export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
                         className="dropdown-item-hover"
                       >
                         <LogOut size={16} />
-                        Log out
+                        {t.navbar.logout}
                       </button>
                     </div>
                   </>
@@ -233,7 +337,7 @@ export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
                   fontWeight: 500
                 }}
               >
-                Log in
+                {t.navbar.login}
               </button>
               <button 
                 onClick={() => onOpenAuth('register')} 
@@ -244,7 +348,7 @@ export default function Navbar({ onOpenAuth, onOpenCheckout }: NavbarProps) {
                   background: 'linear-gradient(to right, var(--primary), #a855f7)'
                 }}
               >
-                Get Started
+                {t.navbar.getStarted}
               </button>
             </div>
           )}

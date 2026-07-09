@@ -10,7 +10,7 @@ interface CheckoutModalProps {
 }
 
 export default function CheckoutModal({ onClose, onSuccess }: CheckoutModalProps) {
-  const { upgradePlan } = useSaaS();
+  const { upgradePlan, t } = useSaaS();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [cardName, setCardName] = useState('');
@@ -114,10 +114,10 @@ export default function CheckoutModal({ onClose, onSuccess }: CheckoutModalProps
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
               <CheckCircle2 size={64} color="#10b981" style={{ animation: 'pulse 2s infinite' }} />
             </div>
-            <h2 style={{ fontSize: '1.75rem', marginBottom: '0.75rem', color: '#10b981' }}>Payment Successful!</h2>
-            <p style={{ color: 'var(--foreground)', fontWeight: 500, marginBottom: '0.5rem' }}>You are now a PRO Educator</p>
+            <h2 style={{ fontSize: '1.75rem', marginBottom: '0.75rem', color: '#10b981' }}>{t.checkout.successTitle}</h2>
+            <p style={{ color: 'var(--foreground)', fontWeight: 500, marginBottom: '0.5rem' }}>{t.checkout.successStatus}</p>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '2rem' }}>
-              Your quota has been upgraded to **Unlimited**. You now have access to all structures, full modules, and comprehensive study guides!
+              {t.checkout.successDesc}
             </p>
             <button 
               onClick={onClose}
@@ -129,16 +129,16 @@ export default function CheckoutModal({ onClose, onSuccess }: CheckoutModalProps
                 boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)'
               }}
             >
-              Start Generating
+              {t.checkout.successCta}
             </button>
           </div>
         ) : (
           /* Payment Form View */
           <div>
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Upgrade to Flyterial Pro</h2>
+              <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{t.checkout.upgradeTitle}</h2>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                Secure payment powered by mock Stripe checkout
+                {t.checkout.upgradeSub}
               </p>
             </div>
 
@@ -151,19 +151,19 @@ export default function CheckoutModal({ onClose, onSuccess }: CheckoutModalProps
               marginBottom: '2rem'
             }}>
               <div className="flex justify-between items-center" style={{ marginBottom: '0.5rem' }}>
-                <span style={{ fontWeight: 500, color: 'var(--foreground)' }}>Flyterial Pro (Monthly)</span>
-                <span style={{ fontWeight: 600, color: 'var(--foreground)' }}>$15.00</span>
+                <span style={{ fontWeight: 500, color: 'var(--foreground)' }}>{t.checkout.summaryTitle}</span>
+                <span style={{ fontWeight: 600, color: 'var(--foreground)' }}>{t.checkout.summaryPrice}</span>
               </div>
               <div className="flex justify-between items-center" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                <span>Billed monthly. Cancel anytime.</span>
-                <span>$15.00/mo</span>
+                <span>{t.checkout.summarySub}</span>
+                <span>{t.checkout.summaryDetailPrice}</span>
               </div>
             </div>
 
             {/* Credit Card Form */}
             <form onSubmit={handlePay} className="flex-col gap-4">
               <div>
-                <label htmlFor="card-name">Cardholder Name</label>
+                <label htmlFor="card-name">{t.checkout.cardholderName}</label>
                 <input 
                   type="text" 
                   id="card-name" 
@@ -176,7 +176,7 @@ export default function CheckoutModal({ onClose, onSuccess }: CheckoutModalProps
               </div>
 
               <div>
-                <label htmlFor="card-number">Card Number</label>
+                <label htmlFor="card-number">{t.checkout.cardNumber}</label>
                 <div style={{ position: 'relative' }}>
                   <input 
                     type="text" 
@@ -201,7 +201,7 @@ export default function CheckoutModal({ onClose, onSuccess }: CheckoutModalProps
 
               <div className="flex gap-4">
                 <div style={{ width: '60%' }}>
-                  <label htmlFor="card-expiry">Expiration Date</label>
+                  <label htmlFor="card-expiry">{t.checkout.expirationDate}</label>
                   <div style={{ position: 'relative' }}>
                     <input 
                       type="text" 
@@ -224,7 +224,7 @@ export default function CheckoutModal({ onClose, onSuccess }: CheckoutModalProps
                   </div>
                 </div>
                 <div style={{ width: '40%' }}>
-                  <label htmlFor="card-cvc">CVC</label>
+                  <label htmlFor="card-cvc">{t.checkout.cvc}</label>
                   <div style={{ position: 'relative' }}>
                     <input 
                       type="text" 
@@ -260,7 +260,7 @@ export default function CheckoutModal({ onClose, onSuccess }: CheckoutModalProps
                 }} 
                 disabled={loading}
               >
-                {loading ? 'Processing Securely...' : 'Pay $15.00'}
+                {loading ? t.checkout.processing : t.checkout.payBtn}
               </button>
             </form>
           </div>

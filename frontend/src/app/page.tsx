@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Loader2, Download, FileText, ChevronLeft, Trash2, Sparkles, Clock, Lock, ArrowRight } from 'lucide-react';
+import { Loader2, Download, FileText, ChevronLeft, Trash2, Clock, Lock, ArrowRight } from 'lucide-react';
 import Editor from '@/components/Editor';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
@@ -23,7 +23,9 @@ export default function Home() {
     addGeneration, 
     deleteHistoryItem,
     presets,
-    sharePreset
+    sharePreset,
+    locale,
+    t
   } = useSaaS();
 
   const [loading, setLoading] = useState(false);
@@ -70,7 +72,8 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          customStructure: customPreset ? customPreset.structure : undefined
+          customStructure: customPreset ? customPreset.structure : undefined,
+          lang: locale
         })
       });
       const data = await res.json();
@@ -80,10 +83,10 @@ export default function Home() {
         // Save to SaaS Provider history
         addGeneration(formData.subject, formData.level, formData.preset, formData.context, data.documents);
       } else {
-        alert('Error generating documents: ' + (data.error || 'Unknown error'));
+        alert(t.dashboard.errorGenerate + (data.error || 'Unknown error'));
       }
-    } catch (err) {
-      alert('Failed to connect to generation service.');
+    } catch {
+      alert(t.dashboard.errorConnection);
     } finally {
       setLoading(false);
     }
@@ -157,17 +160,17 @@ export default function Home() {
           <div style={{ animation: 'fadeIn 0.3s ease-out', display: 'flex', flexDirection: 'column', flex: 1 }}>
             <div className="flex items-center justify-between" style={{ marginBottom: '2rem' }}>
               <button className="btn" onClick={() => setDocuments(null)} style={{ background: 'transparent', border: '1px solid var(--border)' }}>
-                <ChevronLeft size={20} /> Back to Dashboard
+                <ChevronLeft size={20} /> {t.dashboard.backBtn}
               </button>
               <button className="btn btn-primary flex items-center gap-2" onClick={downloadZip} style={{ background: 'linear-gradient(to right, var(--primary), #a855f7)' }}>
-                <Download size={20} /> Download All (.zip)
+                <Download size={20} /> {t.dashboard.downloadBtn}
               </button>
             </div>
 
             <div className="flex gap-6" style={{ flex: 1, minHeight: 0 }}>
               {/* Files list */}
               <div className="glass-panel" style={{ width: '260px', padding: '1.25rem', alignSelf: 'flex-start', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--foreground)' }}>Generated Files</h3>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--foreground)' }}>{t.dashboard.generatedFiles}</h3>
                 <div className="flex-col gap-2" style={{ display: 'flex' }}>
                   {documents.map((doc, idx) => (
                     <button 
@@ -213,13 +216,13 @@ export default function Home() {
             <div className="glass-panel flex-col" style={{ width: '320px', padding: '1.5rem', display: 'flex', height: 'fit-content' }}>
               <div className="flex items-center gap-2" style={{ marginBottom: '1.25rem', borderBottom: '1px solid var(--border)', paddingBottom: '0.75rem' }}>
                 <Clock size={18} color="var(--primary)" />
-                <h3 style={{ fontSize: '1rem', fontWeight: 600 }}>Generation History</h3>
+                <h3 style={{ fontSize: '1rem', fontWeight: 600 }}>{t.dashboard.historyHeader}</h3>
               </div>
 
               {history.length === 0 ? (
                 <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'var(--text-muted)' }}>
                   <HistoryPlaceholder />
-                  <p style={{ fontSize: '0.85rem', marginTop: '1rem' }}>Your generated educational materials will appear here for easy access.</p>
+                  <p style={{ fontSize: '0.85rem', marginTop: '1rem' }}>{t.dashboard.historyPlaceholder}</p>
                 </div>
               ) : (
                 <div className="flex-col gap-3" style={{ display: 'flex', overflowY: 'auto', maxHeight: '500px', paddingRight: '0.25rem' }}>
@@ -278,7 +281,7 @@ export default function Home() {
                         {item.subject}
                       </span>
                       <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'capitalize' }}>
-                        {item.level} • {item.preset === 'lesson-quiz' ? 'Lesson + Quiz' : item.preset === 'full-module' ? 'Full Module' : 'Study Guide'}
+                        {item.level} • {item.preset === 'lesson-quiz' ? t.common.lessonQuiz : item.preset === 'full-module' ? t.common.fullModule : t.common.studyGuide}
                       </span>
                       <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
                         {item.date}
@@ -294,43 +297,43 @@ export default function Home() {
               {loading && (
                 <div style={{ position: 'absolute', inset: 0, background: 'rgba(2, 6, 23, 0.85)', backdropFilter: 'blur(4px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
                   <Loader2 className="animate-spin" size={48} color="var(--primary)" style={{ marginBottom: '1rem' }} />
-                  <h3 className="animate-pulse" style={{ color: 'var(--foreground)' }}>Crafting educational magic...</h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Generating structured curriculum documents via Gemini</p>
+                  <h3 className="animate-pulse" style={{ color: 'var(--foreground)' }}>{t.dashboard.loadingTitle}</h3>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>{t.dashboard.loadingSubtitle}</p>
                 </div>
               )}
               
               <div style={{ marginBottom: '2.25rem' }}>
                 <h1 style={{ fontSize: '2.25rem', fontWeight: 800, marginBottom: '0.5rem', background: 'linear-gradient(to right, var(--primary), #a855f7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  Educational Material Generator
+                  {t.dashboard.generatorTitle}
                 </h1>
-                <p style={{ fontSize: '1rem', color: 'var(--text-muted)' }}>Enter your topic and parameters to craft rich curriculum assets.</p>
+                <p style={{ fontSize: '1rem', color: 'var(--text-muted)' }}>{t.dashboard.generatorSubtitle}</p>
               </div>
               
               <form className="flex-col gap-6" onSubmit={handleGenerate}>
                 <div>
-                  <label htmlFor="subject">Subject / Topic</label>
+                  <label htmlFor="subject">{t.dashboard.subjectLabel}</label>
                   <input 
                     type="text" 
                     id="subject" 
                     required
                     value={formData.subject}
                     onChange={e => setFormData({...formData, subject: e.target.value})}
-                    placeholder="e.g. Cellular Biology, World War II..." 
+                    placeholder={t.dashboard.subjectPlaceholder} 
                   />
                 </div>
 
                 <div className="flex gap-4">
                   <div className="w-full">
-                    <label htmlFor="level">Educational Level</label>
+                    <label htmlFor="level">{t.dashboard.levelLabel}</label>
                     <select id="level" value={formData.level} onChange={e => setFormData({...formData, level: e.target.value})}>
-                      <option value="elementary">Elementary School</option>
-                      <option value="highschool">High School</option>
-                      <option value="undergrad">Undergraduate</option>
+                      <option value="elementary">{t.common.elementary}</option>
+                      <option value="highschool">{t.common.highschool}</option>
+                      <option value="undergrad">{t.common.undergrad}</option>
                     </select>
                   </div>
                   <div className="w-full">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.375rem' }}>
-                      <label htmlFor="preset" style={{ margin: 0 }}>Structural Preset</label>
+                      <label htmlFor="preset" style={{ margin: 0 }}>{t.dashboard.presetLabel}</label>
                       <button 
                         type="button"
                         onClick={() => {
@@ -351,7 +354,7 @@ export default function Home() {
                           padding: 0
                         }}
                       >
-                        + Share Preset
+                        {t.dashboard.sharePresetLink}
                       </button>
                     </div>
                     <select 
@@ -359,28 +362,28 @@ export default function Home() {
                       value={formData.preset} 
                       onChange={e => handlePresetChange(e.target.value)}
                     >
-                      <option value="lesson-quiz">1 Lesson Plan + 1 Quiz (Free)</option>
+                      <option value="lesson-quiz">{t.dashboard.presetFreeOption}</option>
                       <option value="full-module">
-                        {plan === 'pro' ? '2 Classes + 2 Quizzes + 1 Assignment' : 'Full Module (PRO Only 🔒)'}
+                        {plan === 'pro' ? t.dashboard.presetProOption : t.dashboard.presetProOptionLocked}
                       </option>
                       <option value="study-guide">
-                        {plan === 'pro' ? 'Comprehensive Study Guide' : 'Comprehensive Study Guide (PRO Only 🔒)'}
+                        {plan === 'pro' ? t.dashboard.presetStudyOption : t.dashboard.presetStudyOptionLocked}
                       </option>
                       {presets.map(p => (
-                        <option key={p.id} value={p.id}>{p.name} (Community)</option>
+                        <option key={p.id} value={p.id}>{p.name} ({t.dashboard.presetCommunitySuffix})</option>
                       ))}
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="context">Additional Context (Optional)</label>
+                  <label htmlFor="context">{t.dashboard.contextLabel}</label>
                   <textarea 
                     id="context" 
                     rows={4} 
                     value={formData.context}
                     onChange={e => setFormData({...formData, context: e.target.value})}
-                    placeholder="Specific focus areas, standards, or learning goals to customize the output..."></textarea>
+                    placeholder={t.dashboard.contextPlaceholder}></textarea>
                 </div>
 
                 {/* Quota warning display */}
@@ -396,8 +399,8 @@ export default function Home() {
                     fontSize: '0.9rem'
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
-                      <span>Quota:</span>
-                      <span style={{ fontWeight: 600, color: 'var(--foreground)' }}>{generationsUsed} / {generationsLimit} free generations used</span>
+                      <span>{t.dashboard.quotaLabel}</span>
+                      <span style={{ fontWeight: 600, color: 'var(--foreground)' }}>{generationsUsed} / {generationsLimit} {t.dashboard.quotaDesc}</span>
                     </div>
                     {generationsUsed >= generationsLimit ? (
                       <button 
@@ -414,7 +417,7 @@ export default function Home() {
                           gap: '0.25rem'
                         }}
                       >
-                        Unlock PRO <ArrowRight size={14} />
+                        {t.dashboard.quotaUnlockPro} <ArrowRight size={14} />
                       </button>
                     ) : null}
                   </div>
@@ -434,10 +437,10 @@ export default function Home() {
                 >
                   {generationsUsed >= generationsLimit && plan === 'free' ? (
                     <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                      <Lock size={18} /> Upgrade to Generate ✨
+                      <Lock size={18} /> {t.dashboard.upgradeBtn}
                     </span>
                   ) : (
-                    <span>Generate Resources ✨</span>
+                    <span>{t.dashboard.generateBtn}</span>
                   )}
                 </button>
               </form>
